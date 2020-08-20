@@ -1,0 +1,79 @@
+.menu{
+	width: 100%;
+}
+
+.navbar-nav{
+	font-size: 25px;
+}
+
+.navbar-brand{
+	margin-right: 50px;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link{
+	padding-left: 25px;
+	padding-right: 25px;
+}
+.navbar-img{
+	width: 100px;
+
+}
+
+.loginbar .login-link{
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.content{
+	padding: 20px 20px;
+}
+
+.footer{
+	margin-top: 30px;
+	border: 1px solid;
+	color: #ffffff;
+	background-color: #000000;
+}
+
+.prod-item{
+	width: 350px;
+	text-align: center;
+	padding: 30px 20px;
+}
+
+.prod-item-description{
+	text-align: center;
+}
+.prod-item-price{
+	text-align: center;
+}
+.prod-sorter{
+	margin-bottom: 80px;
+	text-align: center;
+	margin-top: 50px;
+}
+
+.btn-legend{
+	background-color: #5a4a42;
+	color: white;
+	width: 80%;
+	border: 1px solid #5a4a42;
+}
+.btn-legend:hover{
+	background-color: #efac20;
+	color: #1d2124;
+	border: 1px solid #efac20;
+}
+
+.card{
+	text-align: center;
+	border: 1px solid transparent;
+	margin-bottom: 50px;
+}
+.card-title{
+	font-size: 18px;
+	color: #1d2124;
+}
+.page-link, .page-link:hover{
+	color: #1d2124;
+}
