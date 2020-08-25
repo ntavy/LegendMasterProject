@@ -5,19 +5,20 @@
     	protected $params = [];
 	    public function __construct(){
 	    	$req = $this->parseUrl();
-	    	if (isset($req[0])) {
-	    		$this->controller = $req[0];
-	    		unset($req[0]);
+            $index = 0;
+            if (isset($req[$index])) {
+	    		$this->controller = $req[$index];
+	    		unset($req[$index]);
 	    	}
 	    	$file = 'controllers/' . $this->controller . '.php';
 	    	//echo $file;
 			require_once $file;
-			$controllerName = str_replace("-", "", $this->controller) . 'Controller';
+			$controllerName = str_replace("-", "", $this->controller) . 'AdminController';
         	$controller = new $controllerName;
-			if(isset($req[1])){
-	            if(method_exists($controller, $req[1])){
-	                $this->method = $req[1];
-	                unset($req[1]);
+			if(isset($req[$index+1])){
+	            if(method_exists($controller, $req[$index+1])){
+	                $this->method = $req[$index+1];
+	                unset($req[$index+1]);
 	            }
 	        }
 	        $this->params = $req ? array_values($req): [];

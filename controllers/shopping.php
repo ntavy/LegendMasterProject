@@ -1,5 +1,5 @@
 <?php 
-class Shopping extends Controller{
+class ShoppingController extends Controller{
     public function index(){
         $this->view('shopping');
     }
