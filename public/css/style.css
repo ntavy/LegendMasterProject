@@ -73,10 +73,34 @@
 	border: 1px solid transparent;
 	margin-bottom: 50px;
 }
-.card-title{
+
+.card-title {
 	font-size: 18px;
 	color: #1d2124;
 }
-.page-link, .page-link:hover{
+
+.page-link, .page-link:hover {
 	color: #1d2124;
+}
+
+.input-legend {
+	display: inline-block;
+	width: 100%;
+	height: calc(1.5em + .75rem + 2px);
+	padding: .375rem 1.75rem .375rem .75rem;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #495057;
+	vertical-align: middle;
+	border: 1px solid #ced4da;
+	border-radius: .25rem;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	margin-bottom: 15px;
+}
+
+.custom-select {
+	margin-bottom: 15px;
 }
