@@ -5,7 +5,7 @@
 <div class="col-md-6 ">
 <div class="items d-flex flex-wrap">
 	<div class="prod-item">
-		<a href=""><img src="public/images/products/nescafe.jpg"></a>
+		<a href=""><img src="public/images/products/nescafe.jpg"></a> 
 	</div>
 	</div>
 </div>
