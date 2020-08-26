@@ -1,5 +1,5 @@
 <?php 
-class ProductDetail extends Controller{
+class ProductDetailController extends Controller{
     public function index(){
         $this->view('product-detail');
     }
