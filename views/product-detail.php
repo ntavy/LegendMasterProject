@@ -23,7 +23,7 @@
 	<div class="prod-item-qty row form-group"> <div class="col-xs-4">Qty: </div>
 	<div class="col-xs-2"><input placeholder=1 class="form-control" type="text" name="prodQty" id="prodQty"></div> </div>
 	<div class="prod-item-add-to-cart row form-group">
-	<div class="col-xs-6"><button type="button" class="btnAddToCart btn-primary btn-lg">Add to Cart</button> <button type="button" class="btnBuyItNow btn-primary btn-lg">Buy It Now</button></div> </div>
+	<div class="col-xs-6"> <button type="button" class="btnAddToCart btn-primary btn-lg">Add to Cart</button> <a href="payment"> <button type="button" class="btnBuyItNow btn-primary btn-lg">Buy It Now</button> </a></div> </div>
 	
 </div>
 </div>
