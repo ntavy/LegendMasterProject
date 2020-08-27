@@ -6,7 +6,7 @@
     </div>
     <div class="row">
         <div class="col-sm-5">
-            <img src="public/images/contactCoffee.jpg" alt="Image" style="width:100%">
+            <img src="public/images/legend-coffee-logo.png" alt="Image" style="width:100%">
         </div>
         <div class="col-sm-5">
             <form action="" method="">
