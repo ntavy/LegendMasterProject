@@ -5,10 +5,16 @@
         <hr>
     </div>
     <div class="row">
-        <div class="col-sm-5">
-            <img src="public/images/legend-coffee-logo.png" alt="Image" style="width:100%">
+        <div class="col-sm-6">
+            <img src="public/images/legend-coffee-logo.png" alt="Image" style="width:50%">
+
+            <ul class="contact-text">
+                <li><b>Address: </b> 123 head st, Adelaide SA 5000</li>
+                <li><b>Phone: </b> (123) 456 789</li>
+                <li><b>Email: </b> info@legend.com.au</li>
+            </ul>
         </div>
-        <div class="col-sm-5">
+        <div class="col-sm-6">
             <form action="" method="">
                 <label for="fname">First Name</label>
                 <input class="input-legend" type="text" id="fname" name="firstname" placeholder="First Name">
@@ -25,8 +31,8 @@
                 <label for="subject">Subject</label>
                 <textarea class="input-legend" id="subject" name="subject" placeholder="Write something.."
                           style="height:170px"></textarea>
-
-                <input type="submit" value="Submit" class="btn btn-legend">
+                <br><br>
+                <input type="submit" value="Submit" class="btn btn-legend btn-legend-lrg">
             </form>
         </div>
     </div>
