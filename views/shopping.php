@@ -33,21 +33,21 @@
             </select>
         </div>
         <div class="col-sm-3">
-           <br>
-           <input type="submit" class="btn btn-secondary btn-legend" name="submit" value="Search">
+            <br>
+            <input type="submit" class="btn btn-secondary btn-legend btn-legend-def" name="submit" value="Search">
         </div>
     </div>
 
-<!--    all product images-->
+    <!--    all product images-->
     <div class="row">
-    <?php
+        <?php
     for($i=0; $i<=11; $i++){
         echo '<div class="col-sm-2">
             <div class="card">
                <img class="card-img-top" src="public/images/products/nescafe.jpg" alt="Card image">
                 <div class="card-body">
                     <h4 class="card-title">Nescafe Coffee Mixer Sachets Cappuccino 10 pack</h4>
-                    <a href="product-detail" class="btn btn-primary stretched-link btn-legend">$22.00</a>
+                    <a href="product-detail" class="btn btn-primary stretched-link btn-legend btn-legend-def">$22.00</a>
                 </div>
             </div>
         </div>';

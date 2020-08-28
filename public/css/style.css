@@ -59,16 +59,33 @@
 .btn-legend{
 	background-color: #5a4a42;
 	color: white;
-	width: 80%;
+	/*width: 80%;*/
 	border: 1px solid #5a4a42;
 }
-.btn-legend:hover{
+
+.btn-legend:hover {
 	background-color: #efac20;
 	color: #1d2124;
 	border: 1px solid #efac20;
 }
 
-.card{
+.btn-legend-xsml {
+	width: 30%;
+}
+
+.btn-legend-sml {
+	width: 50%;
+}
+
+.btn-legend-def {
+	width: 80%;
+}
+
+.btn-legend-lrg {
+	width: 100%;
+}
+
+.card {
 	text-align: center;
 	border: 1px solid transparent;
 	margin-bottom: 50px;
@@ -103,4 +120,8 @@
 
 .custom-select {
 	margin-bottom: 15px;
+}
+
+.extra_margin {
+	margin-bottom: 10px;
 }
