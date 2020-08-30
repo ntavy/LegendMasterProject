@@ -1,19 +1,19 @@
 <?php
 class Product {
-    public $proCode;
-    public $proName;
-    public $proDescription;
-    public $brandID;
-    public $supplierCode;
-    public $importedQuantity;
-    public $remainQuantity;
-    public $typeCode;
-    public $purchasedPrice;
-    public $salePrice;
-    public $sizePerPack;
-    public $imagePath;
-    public $addedDate;
-    public $updatedDate;
+//    public $proCode;
+//    public $proName;
+//    public $proDescription;
+//    public $brandID;
+//    public $supplierCode;
+//    public $importedQuantity;
+//    public $remainQuantity;
+//    public $typeCode;
+//    public $purchasedPrice;
+//    public $salePrice;
+//    public $sizePerPack;
+//    public $imagePath;
+//    public $addedDate;
+//    public $updatedDate;
 
 
 //    public function __construct($proCode, $proName, $proDescription, $brandID, $supplierCode, $importedQuantity, $remainQuantity, $typeCode, $purchasedPrice)
@@ -27,10 +27,9 @@ class Product {
     public static function getAll(){
         $list = [];
         $db = Database::getInstance();
-        $req = $db->query('SELECT * FROM brand');
+        $req = $db->query('SELECT * FROM product');
         foreach($req->fetchAll() as $rc) {
             $list[] = $rc;
-            //$list[] = new Brand($rc['brandID'], $rc['name'],  $rc['description']);
         }
         return $list;
     }

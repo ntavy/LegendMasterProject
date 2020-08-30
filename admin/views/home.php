@@ -1,6 +1,7 @@
-	<h1>Add new product</h1>
-    <iframe name="hiddenFrame" width="0" height="0" border="0" style="display: none;"></iframe>
-    <form id="product-form" action="<?php echo dirname($_SERVER['PHP_SELF'])?>/home/addProduct" method="post" name="add-product" target="hiddenFrame">
+<h1>Add new product</h1>
+<!--    <iframe name="hiddenFrame" width="0" height="0" border="0" style="display: none;"></iframe>-->
+<!--    <form id="addProductForm" action="--><?php //echo dirname($_SERVER['PHP_SELF'])?><!--/home/addProduct" method="post" name="submit" target="hiddenFrame">-->
+    <form id="addProductForm" action="<?php echo dirname($_SERVER['PHP_SELF'])?>/home/addProduct" method="post" name="submit" enctype="multipart/form-data">
 		<div class="row add-product-form">
 			<div class="col">
 				<div class="form-group row">
@@ -53,22 +54,21 @@
 				</div>
 				<div class="form-group row">
 					<label for="proPhoto" class="col-sm-2 col-form-label">Photo:</label>
-<!--					<input type="text" id="pPhoto" name="pPhoto" class="form-control col-sm-9">-->
-
-					<div class="input-group col-sm-9">
-						<div class="custom-file">
-							<input type="file" class="custom-file-input" id="proPhoto" name="proPhoto">
-							<label class="custom-file-label" for="inputGroupFile02">Choose file</label>
-						</div>
-						<div class="input-group-append">
-							<span class="input-group-text" id="">Upload</span>
-						</div>
-					</div>
+                    <input type="file" class="form-control-file col-sm-9" id="proPhoto" name="proPhoto">
+<!--					<div class="input-group col-sm-9">-->
+<!--						<div class="custom-file">-->
+<!--							<input type="file" class="custom-file-input" id="proPhoto" name="proPhoto">-->
+<!--							<label class="custom-file-label" for="inputGroupFile02">Choose file</label>-->
+<!--						</div>-->
+<!--						<div class="input-group-append">-->
+<!--							<span class="input-group-text" id="">Upload</span>-->
+<!--						</div>-->
+<!--					</div>-->
 				</div>
 			</div>
 		</div>
 		<div>
-			<button type="submit" class="btn btn-secondary btn-lg">Save</button>
+			<button type="submit" id="submit" name="submit" class="btn btn-secondary btn-lg">Save</button>
 		</div>
 	</form>
 

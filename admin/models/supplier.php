@@ -1,9 +1,9 @@
 <?php
 class Supplier {
-    public $supplierCode;
-    public $supplierName;
-    public $addressId;
-    public $addedDate;
+//    public $supplierCode;
+//    public $supplierName;
+//    public $addressId;
+//    public $addedDate;
 
     /*
     public function __construct($supplierCode, $supplierName, $addressId, $addedDate)
