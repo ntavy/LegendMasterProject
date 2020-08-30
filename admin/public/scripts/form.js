@@ -18,9 +18,9 @@ $('#addProductForm').submit(function(e){
         contentType: false,
         processData: false,
         success:function(data){
-            console.log(data);
+            //console.log(data);
             //whatever you wanna do after the form is successfully submitted
-            console.log("success");
+            //console.log("success");
             //reset form
             $('#proName').val("");
             $('#proDesc').val("");

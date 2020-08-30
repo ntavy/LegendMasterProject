@@ -1,7 +1,6 @@
 <?php 
 class HomeAdminController extends Controller{
     public function index(){
-        echo 'index';
         $this->model('brand');
         $this->model('supplier');
         $this->model('product');
