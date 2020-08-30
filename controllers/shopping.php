@@ -4,7 +4,7 @@ class ShoppingController extends Controller{
         $productModel = $this->model('product');
         $listProducts = Product::getAll();
         print_r($listProducts);
-        $this->view('shopping');
+        return $this->view('shopping', ['listProducts'=>$listProducts]);
     }
 }
 ?>
