@@ -39,22 +39,26 @@
     </div>
 
     <!--    all product images-->
+   
     <div class="row">
-        <?php
-    for($i=0; $i<=11; $i++){
-        echo '<div class="col-sm-2">
+    <?php
+    foreach ($data['listProducts'] as $item){ 
+    echo
+   '<form class="form-group" action="product-detail" method="post">
+        <div class="col-sm-8">
             <div class="card">
                <img class="card-img-top" src="public/images/products/nescafe.jpg" alt="Card image">
                 <div class="card-body">
-                    <h4 class="card-title">Nescafe Coffee Mixer Sachets Cappuccino 10 pack</h4>
-                    <a href="product-detail" class="btn btn-primary stretched-link btn-legend btn-legend-def">$22.00</a>
+                    <input name="sizePerPack" id="sizePerPack" class="sizePerPack" type="hidden" value="'.$item['sizePerPack'].'">
+                    <h4 class="card-title row"> 
+                    <input type="text" id="proName" class="proName border-0" readonly name="proName" value="'.$item['proName'].'"></h4>
+                   <input id="salePrice" name="salePrice" type="submit" class="btn btn-primary  stretched-link btn-legend btn-legend-def row" value="$'.$item['salePrice'].'">
                 </div>
             </div>
-        </div>';
-    }
-
-    ?>
-
+        </div>
+    </form>';
+   }        
+   ?>         
     </div>
 
     <ul class="pagination justify-content-center">

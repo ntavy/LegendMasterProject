@@ -1,7 +1,10 @@
 <?php 
 class ShoppingController extends Controller{
     public function index(){
-        $this->view('shopping');
+        $productModel = $this->model('product');
+        $listProducts = Product::getAll();
+        print_r($listProducts);
+        return $this->view('shopping', ['listProducts'=>$listProducts]);
     }
 }
 ?>
