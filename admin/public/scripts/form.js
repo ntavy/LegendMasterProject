@@ -9,8 +9,8 @@ $('#addProductForm').submit(function(e){
     var files = $('#proPhoto')[0].files[0];
     fd.append('proPhoto',files);
 
-    console.log(url);
-    console.log(fd);
+    // console.log(url);
+    // console.log(fd);
     $.ajax({
         url:url,
         type:'post',

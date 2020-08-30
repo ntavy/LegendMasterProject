@@ -47,7 +47,7 @@
    '<form class="form-group" action="product-detail" method="post">
         <div class="col-sm-8">
             <div class="card">
-               <img class="card-img-top" src="public/images/products/nescafe.jpg" alt="Card image">
+               <img class="card-img-top" src="'.dirname($_SERVER['PHP_SELF']).'/uploads/'.$item['imagePath'].'" alt="Card image">
                 <div class="card-body">
                     <input name="sizePerPack" id="sizePerPack" class="sizePerPack" type="hidden" value="'.$item['sizePerPack'].'">
                     <h4 class="card-title row"> 
