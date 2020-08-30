@@ -2,8 +2,7 @@
 <h1>Product Details</h1>
 <iframe name="hiddenFrame" width="0" height="0" border="0"
 	style="display: none;"></iframe>
-	
-<form id="product-details" action="payment.php" method="post" name="product-details" >
+<form id="product-details" action="payment" method="post" name="product-details" >
 	<div class="container ">
 		<div class="row">
 			<div class="col">
@@ -15,44 +14,37 @@
 			</div>
 			<div class="col">
 				<div class="prod-item-description row form-group"> 
-				<input type="text" id="productName" name="productName" value="Nescafe Coffee Mixer Sachets Cappuccino 10 pack" readonly>
+				<input type="text" class="border-0" id="proName" name="proName" value="<?php echo $_POST['proName']; ?>" readonly>
 				</div>
 				<hr />
 				<div class="prod-item-price row form-group">
-					Price: <input type="text" id="price" name="price" value="$22" readonly>
+					Price: <input type="text" id="salePrice" class="border-0" name="salePrice" value="<?php echo $_POST['salePrice']; ?>" readonly>
 				</div>
-
-				<div class="prod-item-size row form-group">Size(per pack): 250g</div>
-
+				<div class="prod-item-size row form-group">Size(per pack): <input type="text" id="sizePerPack" class="border-0" name="sizePerPack" value="<?php echo $_POST['sizePerPack']; ?> gm" readonly></div>
 				<div class="prod-item-brand row form-group">Brand: Nescafe</div>
-
 				<div class="prod-item-qty row form-group">
 					<div class="col-xs-4">Qty:</div>
 					<div class="col-xs-2">
 						<input placeholder=1 class="form-control" type="text"
-							name="prodQty" id="prodQty">
+							name="prodQty" id="prodQty" required>
 					</div>
 				</div>
 				<div class="prod-item-add-to-cart row form-group">
 					<div class="col-xs-6">
-						<button type="button" class="btnAddToCart btn-primary btn-lg" name="btnAddToCart">Add
+						<button type="submit" class="btnAddToCart btn-primary btn-lg" name="btnAddToCart">Add
 							to Cart</button>
 						<a href="payment">
-							<button type="button" class="btnBuyItNow btn-primary btn-lg" name="btnBuyItNow">Buy
+							<button type="submit" class="btnBuyItNow btn-primary btn-lg" name="btnBuyItNow">Buy
 								It Now</button>
 						</a>
 					</div>
 				</div>
-
 			</div>
 		</div>
 		<div class="row">
-
-			<div class=col-md-12>
+		<div class=col-md-12>
 				<p>
-					Description about the product <br />
-				
-				
+				Description about the product
 				<hr />
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu
 				eleifend augue. Morbi porta elit turpis, vel auctor felis efficitur
@@ -75,4 +67,3 @@
 		</div>
 	</div>
 </form>
-
