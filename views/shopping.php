@@ -46,15 +46,13 @@
             <div class="card">
                <img class="card-img-top" src="public/images/products/nescafe.jpg" alt="Card image">
                 <div class="card-body">
-                    <h4 class="card-title">Nescafe Coffee Mixer Sachets Cappuccino 10 pack</h4>
+                    <h4 class="card-title" name="name">Nescafe Coffee Mixer Sachets Cappuccino 10 pack</h4>
                     <a href="product-detail" class="btn btn-primary stretched-link btn-legend">$22.00</a>
                 </div>
             </div>
         </div>';
     }
-
     ?>
-
     </div>
 
     <ul class="pagination justify-content-center">
