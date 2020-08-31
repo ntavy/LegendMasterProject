@@ -39,7 +39,6 @@
     </div>
 
     <!--    all product images-->
-   
     <div class="row">
     <?php
     foreach ($data['listProducts'] as $item){ 

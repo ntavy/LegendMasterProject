@@ -59,16 +59,33 @@
 .btn-legend{
 	background-color: #5a4a42;
 	color: white;
-	width: 80%;
+	/*width: 80%;*/
 	border: 1px solid #5a4a42;
 }
-.btn-legend:hover{
+
+.btn-legend:hover {
 	background-color: #efac20;
 	color: #1d2124;
 	border: 1px solid #efac20;
 }
 
-.card{
+.btn-legend-xsml {
+	width: 30%;
+}
+
+.btn-legend-sml {
+	width: 50%;
+}
+
+.btn-legend-def {
+	width: 80%;
+}
+
+.btn-legend-lrg {
+	width: 100%;
+}
+
+.card {
 	text-align: center;
 	border: 1px solid transparent;
 	margin-bottom: 50px;
@@ -103,4 +120,108 @@
 
 .custom-select {
 	margin-bottom: 15px;
+}
+
+.extra_margin {
+	margin-bottom: 10px;
+}
+
+.contact-text {
+	border: 1px solid #f8f9fa;
+	background-color: #f8f9fa;
+	padding: 20px;
+	list-style-type: none;
+	margin-top: 30px;
+}
+
+.contact-text li {
+	margin-bottom: 10px;
+}
+
+.sign-div {
+	border: 1px solid gray;
+	background-color: #f8f9fa;
+	text-align: center;
+
+}
+
+
+/****** Extra small devices   ********/
+@media only screen and (max-width: 600px) {
+	.sign-div {
+		margin: 0;
+	}
+
+	.sign-div .col-sm-6 {
+		padding: 50px 10px;
+	}
+
+	.right-border {
+		border-bottom: 1px solid gray;
+		margin-bottom: 20px;
+	}
+}
+
+/******* Small devices      ********/
+@media only screen and (min-width: 600px) {
+	.sign-div {
+		margin: 0;
+		padding: 30px 0;
+	}
+
+	.sign-div .col-sm-6 {
+		padding: 30px 10px;
+	}
+
+	.right-border {
+		border-right: 1px solid gray;
+	}
+}
+
+/******* Medium devices      ********/
+@media only screen and (min-width: 768px) {
+	.sign-div {
+		margin: 0;
+		padding: 30px 0;
+	}
+
+	.sign-div .col-sm-6 {
+		padding: 30px 30px;
+	}
+
+	.right-border {
+		border-right: 1px solid gray;
+	}
+}
+
+/******* Large devices      ********/
+@media only screen and (min-width: 992px) {
+	.sign-div {
+		margin: 0 10px;
+		padding: 30px 0;
+	}
+
+	.sign-div .col-sm-6 {
+		padding: 30px 30px;
+	}
+
+	.right-border {
+		border-right: 1px solid gray;
+	}
+}
+
+/******* Extra large devices      ********/
+@media only screen and (min-width: 1200px) {
+	.sign-div {
+		margin: 0 15%;
+		padding: 30px 0;
+	}
+
+	.sign-div .col-sm-6 {
+		padding: 30px 70px;
+	}
+
+	.right-border {
+		border-right: 1px solid gray;
+	}
 }

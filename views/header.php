@@ -41,18 +41,18 @@
 			        </div>
 			      </li> -->
 
-			    </ul>
-			  </div>
-			  <div>
-			  	<ul class="navbar-nav loginbar">
-			  		<li><a class="login-link" href="">Login</a></li>
-			  		<li>|</li>
-			  		<li><a class="login-link" href="">Sign up</a></li>
-			  	</ul>
-			  </div>
-			</nav>
-		</div>
-	</div>
-	<div class="content">
+                </ul>
+              </div>
+                <div>
+                    <ul class="navbar-nav loginbar">
+                        <li><a class="login-link" href="sign-in">Sign In</a></li>
+                        <!--			  		<li>|</li>-->
+                        <!--			  		<li><a class="login-link" href="">Sign up</a></li>-->
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="content">
 		
 	
