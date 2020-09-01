@@ -39,7 +39,7 @@ class Product {
         try {
 
             $sql = "INSERT INTO product (proName, proDescription, brandID, supplierCode, importedQuantity, remainQuantity, typeCode, purchasedPrice, salePrice, sizePerPack, imagePath, addedDate, updatedDate)
-                     VALUES ('".$proName."', '".$proDescription."', ".$brandID.", ".$supplierCode.", ".$importedQuantity.", ".$remainQuantity.", '".$typeCode."', ".$purchasedPrice.", ".$salePrice.", ".$sizePerPack.", '".$imagePath."', '".$addedDate."', '".$updatedDate."')";
+                     VALUES ('".$proName."', '".$proDescription."', ".$brandID.", ".$supplierCode.", ".$importedQuantity.", ".$remainQuantity.", '".$typeCode."', ".$purchasedPrice.", ".$salePrice.", '".$sizePerPack."', '".$imagePath."', '".$addedDate."', '".$updatedDate."')";
             // use exec() because no results are returned
             $db->exec($sql);
             echo "New record created successfully";

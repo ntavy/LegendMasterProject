@@ -18,7 +18,7 @@ $('#addProductForm').submit(function(e){
         contentType: false,
         processData: false,
         success:function(data){
-            //console.log(data);
+            console.log(data);
             //whatever you wanna do after the form is successfully submitted
             //console.log("success");
             //reset form
@@ -28,6 +28,7 @@ $('#addProductForm').submit(function(e){
             $('#proSalePrice').val("");
             $('#proQuantity').val("");
             $('#proPhoto').val("");
+            $('#proSize').val("");
 
 
         }

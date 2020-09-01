@@ -91,10 +91,11 @@ class HomeAdminController extends Controller{
             $proQuantity = $_POST["proQuantity"];
         }
         $proPhoto = $fileName;
+        $proSize = $_POST["proSize"];
 
         $this->model('product');
         Product::insertProduct($proName, $proDesc, $proBrand, $proSupplier, $proQuantity, $proQuantity,$proType, $proPurchasedPrice, $proSalePrice,
-            100, $proPhoto, date("Y/m/d H:i:s"),date("Y/m/d H:i:s"));
+            $proSize, $proPhoto, date("Y/m/d H:i:s"),date("Y/m/d H:i:s"));
 
     }
 }

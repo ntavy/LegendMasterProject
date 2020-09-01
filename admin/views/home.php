@@ -24,21 +24,25 @@
 					<label for="proBrand" class="col-sm-2 col-form-label">Product Brand:</label>
 					<select id="proBrand" name="proBrand" class="form-control col-sm-9">
                         <?php foreach ($data['listBrands'] as $item){
-                            echo '<option value='.$item[brandID].'>'.$item[name].'</option>';
+                            echo '<option value='.$item['brandID'].'>'.$item['name'].'</option>';
 
                         } ?>
 					</select>
 				</div>
-			</div>
-			<div class="col">
                 <div class="form-group row">
                     <label for="proSupplier" class="col-sm-2 col-form-label">Supplier:</label>
                     <select id="proSupplier" name="proSupplier" class="form-control col-sm-9">
                         <?php foreach ($data['listSuppliers'] as $item){
-                            echo '<option value='.$item[supplierCode].'>'.$item[supplierName].'</option>';
+                            echo '<option value='.$item['supplierCode'].'>'.$item['supplierName'].'</option>';
 
                         } ?>
                     </select>
+                </div>
+			</div>
+			<div class="col">
+                <div class="form-group row">
+                    <label for="proSize" class="col-sm-2 col-form-label">Size (per pack):</label>
+                    <input type="text" id="proSize" name="proSize" class="form-control col-sm-9">
                 </div>
 				<div class="form-group row">
                     <label for="proPurchasedPrice" class="col-sm-2 col-form-label">Purchased Price:</label>
@@ -55,15 +59,6 @@
 				<div class="form-group row">
 					<label for="proPhoto" class="col-sm-2 col-form-label">Photo:</label>
                     <input type="file" class="form-control-file col-sm-9" id="proPhoto" name="proPhoto">
-<!--					<div class="input-group col-sm-9">-->
-<!--						<div class="custom-file">-->
-<!--							<input type="file" class="custom-file-input" id="proPhoto" name="proPhoto">-->
-<!--							<label class="custom-file-label" for="inputGroupFile02">Choose file</label>-->
-<!--						</div>-->
-<!--						<div class="input-group-append">-->
-<!--							<span class="input-group-text" id="">Upload</span>-->
-<!--						</div>-->
-<!--					</div>-->
 				</div>
 			</div>
 		</div>
