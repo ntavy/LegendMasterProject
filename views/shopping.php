@@ -44,13 +44,15 @@
     foreach ($data['listProducts'] as $item){ 
     echo
    '<form class="form-group" action="product-detail" method="post">
-        <div class="col-sm-8">
+        <div class="col product-item">
             <div class="card">
-               <img class="card-img-top" src="'.dirname($_SERVER['PHP_SELF']).'/uploads/'.$item['imagePath'].'" alt="Card image">
+               <img class="card-img-top product-img" src="'.dirname($_SERVER['PHP_SELF']).'/uploads/'.$item['imagePath'].'" alt="Card image">
                 <div class="card-body">
                     <input name="sizePerPack" id="sizePerPack" class="sizePerPack" type="hidden" value="'.$item['sizePerPack'].'">
                     <h4 class="card-title row"> 
-                    <input type="text" id="proName" class="proName border-0" readonly name="proName" value="'.$item['proName'].'"></h4>
+                    <div class="proName border-0">'.$item['proName'].'</div>
+                    <input type="text" id="proName" class="proName border-0" hidden name="proName" value="'.$item['proName'].'"></h4>
+                    </h4>
                    <input id="salePrice" name="salePrice" type="submit" class="btn btn-primary  stretched-link btn-legend btn-legend-def row" value="$'.$item['salePrice'].'">
                 </div>
             </div>
