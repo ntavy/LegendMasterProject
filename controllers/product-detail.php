@@ -4,5 +4,11 @@ class ProductDetailController extends Controller{
 
         $this->view('product-detail');
     }
+    
+    public function viewproduct($proCode){
+        $productModel = $this->model('product');
+        $listProducts = Product::getProductByProCode($proCode);
+        return $this->view('product-detail', ['listProducts'=>$listProducts]);
+    }
 }
 ?>
