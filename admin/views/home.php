@@ -1,3 +1,8 @@
+<?php
+//    echo $data['isUpdate'];
+//    echo $data['proCode'];
+print_r()
+?>
 <h1>Add new product</h1>
 <!--    <iframe name="hiddenFrame" width="0" height="0" border="0" style="display: none;"></iframe>-->
 <!--    <form id="addProductForm" action="--><?php //echo dirname($_SERVER['PHP_SELF'])?><!--/home/addProduct" method="post" name="submit" target="hiddenFrame">-->
@@ -34,6 +39,7 @@
                     <select id="proSupplier" name="proSupplier" class="form-control col-sm-9">
                         <?php foreach ($data['listSuppliers'] as $item){
                             echo '<option value='.$item['supplierCode'].'>'.$item['supplierName'].'</option>';
+                            //echo '<option value='.$item['supplierCode'].'>'.$item['supplierName'].'</option>';
 
                         } ?>
                     </select>
