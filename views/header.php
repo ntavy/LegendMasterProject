@@ -4,15 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Legend Coffee & Tea</title>
-	<link rel="stylesheet" href="public/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="public/css/style.css">
+	<link rel="stylesheet" href="<?php echo dirname($_SERVER['PHP_SELF']) ?>/public/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo dirname($_SERVER['PHP_SELF']) ?>/public/css/style.css">
 
 </head>
 <body>
 	<div class="header">
 		<div class="menu">
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			  <a class="navbar-brand" href="#"><img src="public/images/legend-coffee-logo.png" class="img-fluid navbar-img" /></a>
+			  <a class="navbar-brand" href="#"><img src="<?php echo dirname($_SERVER['PHP_SELF']) ?>/public/images/legend-coffee-logo.png" class="img-fluid navbar-img" /></a>
 			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 			    <span class="navbar-toggler-icon"></span>
 			  </button>
