@@ -12,7 +12,7 @@
             <p><label class="product-label">Price: </label> $<?php echo $data['listProducts'][0]['salePrice']; ?></p>
             <p><label class="product-label">Size(per
                     pack): </label> <?php echo $data['listProducts'][0]['sizePerPack']; ?></p>
-            <p><label class="product-label">Brand: </label> Moccona </p>
+            <p><label class="product-label">Brand: </label> <?php echo $data['listProducts'][0]['name']; ?> </p>
             <p><label class="product-label">Qty: </label> <input class="input-legend-sml" type="text"
                                                                  placeholder="Enter no. of Quantity" name="prodQty"
                                                                  id="prodQty" value="1" required/></p>
