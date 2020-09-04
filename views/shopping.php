@@ -45,14 +45,10 @@
     echo
    '<div class="col product-item">
             <div class="card">
-               <img id="imageProduct" name="imageProduct" class="card-img-top product-img" src="'.dirname($_SERVER['PHP_SELF']).'/uploads/'.$item['imagePath'].'" alt="Card image">
+               <img id="imageProduct" name="imageProduct" class="card-img-top product-img" src="' . dirname($_SERVER['PHP_SELF']) . '/uploads/' . $item['imagePath'] . '" alt="Card image">
                 <div class="card-body">
-                    <input name="sizePerPack" id="sizePerPack" class="sizePerPack" type="hidden" value="'.$item['sizePerPack'].'">
-                    <h4 class="card-title row"> 
-                    <div class="proName border-0">'.$item['proName'].'</div>
-                    <input type="text" id="proName" class="proName border-0" hidden name="proName" value="'.$item['proName'].'"></h4>
-                    </h4>
-                   <a href="product-detail/viewproduct/'.$item['proCode'].'"><input id="salePrice" name="salePrice" type="submit" class="btn btn-primary  stretched-link btn-legend btn-legend-def row" value="$'.$item['salePrice'].'"> </a>
+                    <h4 class="card-title proName"> ' . $item['proName'] . '</h4>
+                   <a href="product-detail/viewproduct/' . $item['proCode'] . '" class="btn btn-primary  stretched-link btn-legend btn-legend-def">$' . $item['salePrice'] . '</a>
                 </div>
             </div>
         </div>';
