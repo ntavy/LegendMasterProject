@@ -1,41 +1,43 @@
 <div class="container-fluid">
 <!--    sorting feature-->
-    <div class="row prod-sorter">
-        <div class="col-sm-3">
-            Choose Beverage type:
-            <select name="beverage" id="" class="custom-select">
-                <option value="">All</option>
-                <option value="Coffee">Coffee</option>
-                <option value="Tea">Tea</option>
-            </select>
+    <form action="<?php echo dirname($_SERVER['PHP_SELF'])?>/shopping/searchProduct" method="post" name="submit" enctype="multipart/form-data">
+        <div class="row prod-sorter">
+            <div class="col-sm-3">
+                Choose Beverage type:
+                <select name="beverage" id="" class="custom-select">
+                    <option value="">All</option>
+                    <option value="coffee">Coffee</option>
+                    <option value="tea">Tea</option>
+                </select>
+            </div>
+            <div class="col-sm-3">
+                Choose Brand:
+                <select name="brand" id="" class="custom-select">
+                    <option value="">All</option>
+                    <?php
+                        foreach ($data['listBrands'] as $item){
+                            echo '<option value="'.$item['brandID'].'">'.$item['name'].'</option>';
+                        }
+                    ?>
+                </select>
+            </div>
+            <div class="col-sm-3">
+                Sort By:
+                <select name="sort_by" id="" class="custom-select">
+                    <option value="name">Name</option>
+                    <option value="price_low">Price, low to high</option>
+                    <option value="price_high">Price, high to low</option>
+                    <option value="best">Best seller</option>
+                    <option value="new">Newest</option>
+                    <option value="old">Oldest</option>
+                </select>
+            </div>
+            <div class="col-sm-3">
+                <br>
+                <input type="submit" class="btn btn-secondary btn-legend btn-legend-def" name="submit" value="Search">
+            </div>
         </div>
-        <div class="col-sm-3">
-            Choose Brand:
-            <select name="brand" id="" class="custom-select">
-                <option value="">All</option>
-                <?php
-                    foreach ($data['listBrands'] as $item){
-                        echo '<option value="'.$item['brandID'].'">'.$item['name'].'</option>';
-                    }
-                ?>
-            </select>
-        </div>
-        <div class="col-sm-3">
-            Sort By:
-            <select name="sort_by" id="" class="custom-select">
-                <option value="Name">Name</option>
-                <option value="Price_low">Price, low to high</option>
-                <option value="Price_high">Price, high to low</option>
-                <option value="Best">Best seller</option>
-                <option value="New">Newest</option>
-                <option value="Old">Oldest</option>
-            </select>
-        </div>
-        <div class="col-sm-3">
-            <br>
-            <input type="submit" class="btn btn-secondary btn-legend btn-legend-def" name="submit" value="Search">
-        </div>
-    </div>
+    </form>
 
     <!--    all product images-->
     <div class="row">

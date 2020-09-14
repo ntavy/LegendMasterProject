@@ -4,5 +4,7 @@
     require_once 'core/database.php';
     require_once 'config/config.php';
 
-	$route = new route();
+    session_start();
+
+    $route = new route();
 ?>
