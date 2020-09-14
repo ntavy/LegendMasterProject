@@ -12,13 +12,12 @@
         <div class="col-sm-3">
             Choose Brand:
             <select name="brand" id="" class="custom-select">
-
                 <option value="">All</option>
-                <option value="Nescafe">Nescafe</option>
-                <option value="Coles">Coles</option>
-                <option value="Moccona">Moccona</option>
-                <option value="Jarrah">Jarrah</option>
-                <option value="Bickfords">Bickfords</option>
+                <?php
+                    foreach ($data['listBrands'] as $item){
+                        echo '<option value="'.$item['brandID'].'">'.$item['name'].'</option>';
+                    }
+                ?>
             </select>
         </div>
         <div class="col-sm-3">
