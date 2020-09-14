@@ -4,10 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Legend Coffee & Tea</title>
-    <link rel="stylesheet"
-          href="<?php echo dirname($_SERVER['PHP_SELF']) . '/public/bootstrap/css/bootstrap.min.css'; ?>">
-    <link rel="stylesheet" type="text/css"
-          href="<?php echo dirname($_SERVER['PHP_SELF']) . '/public/css/style.css'; ?>">
+    <link rel="stylesheet" href="<?php echo dirname($_SERVER['PHP_SELF'])?>/public/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo dirname($_SERVER['PHP_SELF'])?>/public/css/style.css">
 
 </head>
 <body>

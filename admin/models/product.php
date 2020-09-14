@@ -28,6 +28,7 @@ class Product {
         $list = [];
         $db = Database::getInstance();
         $req = $db->query('SELECT * FROM product');
+
         foreach($req->fetchAll() as $rc) {
             $list[] = $rc;
         }
@@ -40,6 +41,7 @@ class Product {
 
             $sql = "INSERT INTO product (proName, proDescription, brandID, supplierCode, importedQuantity, remainQuantity, typeCode, purchasedPrice, salePrice, sizePerPack, imagePath, addedDate, updatedDate)
                      VALUES ('".$proName."', '".$proDescription."', ".$brandID.", ".$supplierCode.", ".$importedQuantity.", ".$remainQuantity.", '".$typeCode."', ".$purchasedPrice.", ".$salePrice.", '".$sizePerPack."', '".$imagePath."', '".$addedDate."', '".$updatedDate."')";
+//            echo $sql;
             // use exec() because no results are returned
             $db->exec($sql);
             echo "New record created successfully";

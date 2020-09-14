@@ -10,5 +10,6 @@ class ShoppingController extends Controller{
     public function viewproduct($proCode){
         return $this->view('product-detail', ['test'=>1]);
     }
+
 }
 ?>

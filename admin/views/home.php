@@ -1,7 +1,7 @@
 <?php
 //    echo $data['isUpdate'];
 //    echo $data['proCode'];
-print_r()
+
 ?>
 <h1>Add new product</h1>
 <!--    <iframe name="hiddenFrame" width="0" height="0" border="0" style="display: none;"></iframe>-->
