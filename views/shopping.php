@@ -43,25 +43,18 @@
     <?php
     foreach ($data['listProducts'] as $item){ 
     echo
-   '<form class="form-group" action="product-detail" method="post">
-        <div class="col product-item">
+   '<div class="col product-item">
             <div class="card">
-               <img class="card-img-top product-img" src="'.dirname($_SERVER['PHP_SELF']).'/uploads/'.$item['imagePath'].'" alt="Card image">
+               <img id="imageProduct" name="imageProduct" class="card-img-top product-img" src="' . dirname($_SERVER['PHP_SELF']) . '/uploads/' . $item['imagePath'] . '" alt="Card image">
                 <div class="card-body">
-                    <input name="sizePerPack" id="sizePerPack" class="sizePerPack" type="hidden" value="'.$item['sizePerPack'].'">
-                    <h4 class="card-title row"> 
-                    <div class="proName border-0">'.$item['proName'].'</div>
-                    <input type="text" id="proName" class="proName border-0" hidden name="proName" value="'.$item['proName'].'"></h4>
-                    </h4>
-                   <input id="salePrice" name="salePrice" type="submit" class="btn btn-primary  stretched-link btn-legend btn-legend-def row" value="$'.$item['salePrice'].'">
+                    <h4 class="card-title proName"> ' . $item['proName'] . '</h4>
+                   <a href="product-detail/viewproduct/' . $item['proCode'] . '" class="btn btn-primary  stretched-link btn-legend btn-legend-def">$' . $item['salePrice'] . '</a>
                 </div>
             </div>
-        </div>
-    </form>';
+        </div>';
    }        
    ?>         
     </div>
-
     <ul class="pagination justify-content-center">
         <li class="page-item"><a class="page-link" href="javascript:void(0);">Previous</a></li>
         <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
