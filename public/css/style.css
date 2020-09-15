@@ -186,6 +186,10 @@
 	text-align: center;
 }
 
+.active-page{
+	color: #e83e8c;
+}
+
 /****** Extra small devices   ********/
 @media only screen and (max-width: 600px) {
 	.sign-div {

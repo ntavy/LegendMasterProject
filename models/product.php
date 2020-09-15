@@ -21,6 +21,33 @@ class Product {
         return $list;
     }
 
+    /**
+     * @return mixed total number of product items
+     */
+
+    public static function getTotalProductNumber(){
+        $db = Database::getInstance();
+        $req = $db->query('SELECT count(*) as total FROM product');
+        return $req->fetchColumn();
+    }
+
+    /**
+     * @param $offset
+     * @return array
+     * Explain offset: The SQL query below says "return only 10 records, start on record 16 (OFFSET 15)":
+        $sql = "SELECT * FROM Orders LIMIT 10 OFFSET 15";
+     */
+
+    public static function getProductByOffset($offset, $itemPerPage){
+        $list = [];
+        $db = Database::getInstance();
+        $req = $db->query('SELECT * FROM product LIMIT '.$offset.', '.$itemPerPage);
+        foreach($req->fetchAll() as $rc) {
+            $list[] = $rc;
+        }
+        return $list;
+    }
+
     public static function searchProduct($proType, $proBrand, $sortBy){
         $list=[];
         $db = Database::getInstance();

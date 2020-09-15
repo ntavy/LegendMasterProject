@@ -49,7 +49,7 @@
                <img id="imageProduct" name="imageProduct" class="card-img-top product-img" src="' . dirname($_SERVER['PHP_SELF']) . '/uploads/' . $item['imagePath'] . '" alt="Card image">
                 <div class="card-body">
                     <h4 class="card-title proName"> ' . $item['proName'] . '</h4>
-                   <a href="product-detail/viewproduct/' . $item['proCode'] . '" class="btn btn-primary  stretched-link btn-legend btn-legend-def">$' . $item['salePrice'] . '</a>
+                   <a href="'.dirname($_SERVER['PHP_SELF']).'/product-detail/viewproduct/' . $item['proCode'] . '" class="btn btn-primary  stretched-link btn-legend btn-legend-def">$' . $item['salePrice'] . '</a>
                 </div>
             </div>
         </div>';
@@ -57,12 +57,27 @@
    ?>         
     </div>
     <ul class="pagination justify-content-center">
-        <li class="page-item"><a class="page-link" href="javascript:void(0);">Previous</a></li>
-        <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
-        <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
-        <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
-        <li class="page-item"><a class="page-link" href="javascript:void(0);">4</a></li>
-        <li class="page-item"><a class="page-link" href="javascript:void(0);">Next</a></li>
+        <?php
+                $previous = 1;
+                $next = $data['totalPages'];
+                if($data['currentPage'] > 1){
+                    $previous = $data['currentPage'] -1;
+                }
+                if($data['currentPage'] < $data['totalPages']){
+                    $next = $data['currentPage'] + 1;
+                }
+        ?>
+        <li class="page-item"><a class="page-link" href="<?php echo dirname($_SERVER['PHP_SELF']).'/shopping/page/'.$previous ?>">Previous</a></li>
+        <?php for ($i = 1; $i<= $data['totalPages']; $i++){
+                    if($data['currentPage'] == $i){
+                        echo '<li class="page-item"><a class="page-link active-page" href="'.dirname($_SERVER['PHP_SELF']).'/shopping/page/'.$i.'">'.$i.'</a></li>';
+                    }else{
+                        echo '<li class="page-item"><a class="page-link" href="'.dirname($_SERVER['PHP_SELF']).'/shopping/page/'.$i.'">'.$i.'</a></li>';
+                    }
+
+        }
+      ?>
+        <li class="page-item"><a class="page-link" href="<?php echo dirname($_SERVER['PHP_SELF']).'/shopping/page/'.$next ?>">Next</a></li>
     </ul>
         </div>
     </div>

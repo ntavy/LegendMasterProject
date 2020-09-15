@@ -1,41 +1,75 @@
-<?php 
-class ShoppingController extends Controller{
+<?php
+
+class ShoppingController extends Controller
+{
     private $listProducts;
     private $listBrands;
+    private $itemPerPage = 1;
+    private $totalPages = 0;
 
-    public function index(){
+    public function index()
+    {
         $this->model('product'); //create instance product model before call function in Product model
         $this->model('brand'); //create instance brand model before call function in Brand model.
         $this->listProducts = Product::getAll();
         $this->listBrands = Brand::getAll();
-        $_SESSION["listBrands"] = $this->listBrands;
+        $_SESSION["listBrands"] = $this->listBrands;        //store in session for reload later.
+
+        $totalItems = Product::getTotalProductNumber();
+
+        $this->totalPages = $totalItems / $this->itemPerPage;
+        $_SESSION["totalPages"] = $this->totalPages;
+
+
         //print_r($listProducts);
-        return $this->view('shopping', ['activeMenu'=>'shopping', 'listProducts'=>$this->listProducts, 'listBrands'=>$this->listBrands]);
+        return $this->view('shopping', ['activeMenu' => 'shopping', 'listProducts' => $this->listProducts,
+            'listBrands' => $this->listBrands, 'totalPages' => $this->totalPages, 'currentPage' => 1]);
     }
 
-    public function searchProduct(){
+    public function searchProduct()
+    {
         $proType = "";
         $proBrand = 0;
         $sortBy = "name";
         echo $_POST["beverage"];
-        if($_POST["beverage"] != ""){
+        if ($_POST["beverage"] != "") {
             $proType = $_POST["beverage"];
 
         }
         echo $proType;
-        if($_POST["brand"] != ""){
+        if ($_POST["brand"] != "") {
             $proBrand = $_POST["brand"];
         }
-        if($sortBy != ""){
+        if ($sortBy != "") {
             $sortBy = $_POST["sort_by"];
         }
         $this->model('product');
         $this->listProducts = Product::searchProduct($proType, $proBrand, $sortBy);
+
+        getSession();
+
+        return $this->view('shopping', ['activeMenu' => 'shopping', 'listProducts' => $this->listProducts, 'listBrands' => $this->listBrands]);
+    }
+
+    public function page($pageNumber){
+        $offset = ($pageNumber-1) * $this->itemPerPage;
+
+        $this->model('product');
+        $this->listProducts = Product::getProductByOffset($offset, $this->itemPerPage);
+
+        $this->getSession();
+
+        return $this->view('shopping', ['activeMenu' => 'shopping', 'listProducts' => $this->listProducts,
+            'listBrands' => $this->listBrands, 'totalPages' => $this->totalPages, 'currentPage' => $pageNumber]);
+    }
+
+    public function getSession(){
+        $this->totalPages = $_SESSION["totalPages"];
         $this->listBrands = $_SESSION["listBrands"];
-        return $this->view('shopping', ['activeMenu'=>'shopping', 'listProducts'=>$this->listProducts, 'listBrands'=>$this->listBrands]);
+
     }
 
 
-
 }
+
 ?>
