@@ -49,7 +49,7 @@ class Product {
                 $prepareSql = $prepareSql." ORDER BY addedDate asc";
             }
         }
-        echo $prepareSql;
+        //echo $prepareSql;
         $req = $db->query($prepareSql);
         foreach ($req->fetchAll() as $rc) {
             $list[] = $rc;

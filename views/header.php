@@ -21,19 +21,20 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="<?php echo dirname($_SERVER['PHP_SELF']) ?>">Home <span
-                                class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?php echo dirname($_SERVER['PHP_SELF']) ?>/shopping">Shopping</a>
-			      </li>
-			      <li class="nav-item">
-			        <a class="nav-link" href="<?php echo dirname($_SERVER['PHP_SELF']) ?>/about-us">About Us</a>
-			      </li>
-			      <li class="nav-item">
-			        <a class="nav-link" href="<?php echo dirname($_SERVER['PHP_SELF']) ?>/contact-us">Contact Us</a>
-			      </li>			      
+<!--                    <li class="nav-item active">-->
+<!--                        <a class="nav-link" href="--><?php //echo dirname($_SERVER['PHP_SELF']) ?><!--">Home <span-->
+<!--                                class="sr-only">(current)</span></a>-->
+<!--                    </li>-->
+                        <li class="nav-item <?php echo $data["activeMenu"]=='shopping'? 'active' : ''; ?>">
+                            <a class="nav-link" href="<?php echo dirname($_SERVER['PHP_SELF']) ?>/shopping">Shopping<span
+                                        class="sr-only">(current)</span></a>
+                      </li>
+                      <li class="nav-item <?php echo $data["activeMenu"]=="about-us"? 'active' : '' ?>">
+                        <a class="nav-link" href="<?php echo dirname($_SERVER['PHP_SELF']) ?>/about-us">About Us</a>
+                      </li>
+                      <li class="nav-item <?php echo $data["activeMenu"]=="contact-us"? 'active' : '' ?>">
+                        <a class="nav-link" href="<?php echo dirname($_SERVER['PHP_SELF']) ?>/contact-us">Contact Us</a>
+                      </li>
 			      <!-- <li class="nav-item dropdown">
 			        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			          Dropdown link

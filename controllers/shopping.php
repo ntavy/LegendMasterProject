@@ -10,11 +10,7 @@ class ShoppingController extends Controller{
         $this->listBrands = Brand::getAll();
         $_SESSION["listBrands"] = $this->listBrands;
         //print_r($listProducts);
-        return $this->view('shopping', ['listProducts'=>$this->listProducts, 'listBrands'=>$this->listBrands]);
-    }
-
-    public function viewproduct($proCode){
-        return $this->view('product-detail', ['test'=>1]);
+        return $this->view('shopping', ['activeMenu'=>'shopping', 'listProducts'=>$this->listProducts, 'listBrands'=>$this->listBrands]);
     }
 
     public function searchProduct(){
@@ -36,7 +32,7 @@ class ShoppingController extends Controller{
         $this->model('product');
         $this->listProducts = Product::searchProduct($proType, $proBrand, $sortBy);
         $this->listBrands = $_SESSION["listBrands"];
-        return $this->view('shopping', ['listProducts'=>$this->listProducts, 'listBrands'=>$this->listBrands]);
+        return $this->view('shopping', ['activeMenu'=>'shopping', 'listProducts'=>$this->listProducts, 'listBrands'=>$this->listBrands]);
     }
 
 
