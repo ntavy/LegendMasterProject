@@ -4,21 +4,22 @@ class ShoppingController extends Controller
 {
     private $listProducts;
     private $listBrands;
-    private $itemPerPage = 1;
+    private $itemPerPage = 2;
     private $totalPages = 0;
 
     public function index()
     {
         $this->model('product'); //create instance product model before call function in Product model
         $this->model('brand'); //create instance brand model before call function in Brand model.
-        $this->listProducts = Product::getAll();
+
+        $totalItems = Product::getTotalProductNumber();
+        $this->totalPages = ceil($totalItems / $this->itemPerPage);
+
+        $offset = 0;
+        $this->listProducts = Product::getProductByOffset($offset, $this->itemPerPage);
         $this->listBrands = Brand::getAll();
         $_SESSION["listBrands"] = $this->listBrands;        //store in session for reload later.
 
-        $totalItems = Product::getTotalProductNumber();
-
-        $this->totalPages = $totalItems / $this->itemPerPage;
-        $_SESSION["totalPages"] = $this->totalPages;
 
 
         //print_r($listProducts);
@@ -57,6 +58,9 @@ class ShoppingController extends Controller
         $this->model('product');
         $this->listProducts = Product::getProductByOffset($offset, $this->itemPerPage);
 
+        $totalItems = Product::getTotalProductNumber();
+        $this->totalPages = ceil($totalItems / $this->itemPerPage);
+
         $this->getSession();
 
         return $this->view('shopping', ['activeMenu' => 'shopping', 'listProducts' => $this->listProducts,
@@ -64,7 +68,6 @@ class ShoppingController extends Controller
     }
 
     public function getSession(){
-        $this->totalPages = $_SESSION["totalPages"];
         $this->listBrands = $_SESSION["listBrands"];
 
     }
