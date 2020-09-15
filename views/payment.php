@@ -1,9 +1,12 @@
 <?php
 $proName = $_POST['proName'];
 $salePrice = $_POST['salePrice'];
+$img = $_POST['imgSrc'];
+$size = $_POST['sizePerPack'];
 $prodQty = $_POST['prodQty'];
 $calcPrice = ltrim($salePrice, '$');
 $total = $calcPrice * $prodQty;
+
 ?>
 <h1>Payment</h1>
 <iframe name="hiddenFrame" width="0" height="0" border="0"
@@ -15,13 +18,13 @@ $total = $calcPrice * $prodQty;
 			<div class="form-group row">
 				<label for="paymentMethod" class="col-sm-3 col-form-label">Payment
 					Method: </label> <a class="col-sm-2" href="#"><img
-					src="public/images/ImagesPayment/masterCard.jpg" width="80"
+					src="<?php  echo dirname($_SERVER['PHP_SELF']) . '/public/images/ImagesPayment/masterCard.jpg' ; ?>" width="80"
 					height="35"></a> <a class="col-sm-2" href="#"><img
-					src="public/images/ImagesPayment/PayPalCard.png" width="80"
+					src="<?php  echo dirname($_SERVER['PHP_SELF']) . '/public/images/ImagesPayment/PayPalCard.png' ; ?>" width="80"
 					height="35"></a> <a class="col-sm-2" href="#"><img
-					src="public/images/ImagesPayment/visaCard.jpg" width="80"
+					src="<?php  echo dirname($_SERVER['PHP_SELF']) . '/public/images/ImagesPayment/visaCard.jpg' ; ?>" width="80"
 					height="35"></a> <a class="col-sm-2" href="#"><img
-					src="public/images/ImagesPayment/visaDebitCard.jpg" width="80"
+					src="<?php  echo dirname($_SERVER['PHP_SELF']) . '/public/images/ImagesPayment/visaDebitCard.jpg' ; ?>" width="80"
 					height="35"></a>
 			</div>
 			<div class="form-group row">
@@ -76,11 +79,11 @@ $total = $calcPrice * $prodQty;
 				<label for="billingAddress" class="col-sm-3 col-form-label">Billing
 					Address: </label> <input type="text" class="form-control col-sm-6"
 					name="billingAddress" id="billingAddress">
-				<button type="button" class="btnAddBillingAddress btn-primary">Add
+				<button type="button" class="btnAddBillingAddress btn btn-primary btn-legend">Add
 					Billing Address</button>
 			</div>
 			<div class="form-group row">
-				<button type="button" class="btnPay btn-primary btn-lg">Pay</button>
+				<button type="button" class="btnPay btn btn-primary btn-legend btn-legend-xsml">Pay</button>
 			</div>
 		</div>
 		<div class="col-md-4">
@@ -88,13 +91,14 @@ $total = $calcPrice * $prodQty;
 
 			<div class="card">
 				<div class="col-sm-8">
-					<img class="card-img-top" src="public/images/products/nescafe.jpg"
-						alt="Card image">
+					 <img id="imageProduct" name="imageProduct" class="img-fluid"
+                 src="<?php echo $img; ?>"
+                 alt="Card image"/>
 				</div>
 				<div class="card-body">
-					<label for="proName" class="form-group row border-0 ">Product Name: <?php echo $proName; ?> </label>
-					<label for="salePrice" class="form-group row border-0 ">Price: <?php echo $_POST['salePrice']; ?> </label>
-					<label for="sizePerPack" class="form-group row border-0">Size Per Pack: <?php echo $_POST['sizePerPack']; ?></label>
+					 <label for="proName" class="form-group row border-0 ">Product Name: <?php echo $_POST['proName']; ?> </label>
+					<label for="salePrice" class="form-group row border-0 ">Price: <?php echo $salePrice; ?> </label>
+					<label for="sizePerPack" class="form-group row border-0">Size Per Pack: <?php echo $size; ?></label>
 					<label for="Qty" class="form-group row border-0 ">Qty: <?php echo $_POST['prodQty']; ?> </label>
 					<label for="total" class="form-group row border-0">Total Amount: $<?php echo $total; ?></label>
 				</div>
