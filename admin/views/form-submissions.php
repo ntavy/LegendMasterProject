@@ -17,7 +17,7 @@
                     <td>' . $item['contactID'] . '</td>
                     <td>' . $item['firstName'] . '</td>
                     <td>' . $item['lastName'] . '</td>
-                    <td>' . $item['emailID'] . '</td>
+                    <td>' . $item['email'] . '</td>
                     <td>' . $item['company'] . '</td>
                     <td>' . $item['message'] . '</td>
                    </tr>';
