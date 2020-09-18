@@ -17,26 +17,33 @@
 			    <span class="navbar-toggler-icon"></span>
 			  </button>
 			  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-			    <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="<?php echo dirname($_SERVER['PHP_SELF']) ?>">Add New Product <span class="sr-only">(current)</span></a>
-                    </li>
-			        <li class="nav-item">
-			            <a class="nav-link" href="<?php echo dirname($_SERVER['PHP_SELF']) ?>/manage-products">Manage Products</a>
-			        </li>
-			        <li class="nav-item">
-			            <a class="nav-link" href="<?php echo dirname($_SERVER['PHP_SELF']) ?>/manage-users">Manage Users</a>
-			        </li>
-			    </ul>
-			  </div>
-			  <div>
-			  	<ul class="navbar-nav loginbar">
-			  		<li><a class="login-link" href="">Login</a></li>
-			  	</ul>
-			  </div>
-			</nav>
-		</div>
-	</div>
+                  <ul class="navbar-nav">
+                      <li class="nav-item active">
+                          <a class="nav-link" href="<?php echo dirname($_SERVER['PHP_SELF']) ?>">Add New Product <span
+                                  class="sr-only">(current)</span></a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="<?php echo dirname($_SERVER['PHP_SELF']) ?>/manage-products">Manage
+                              Products</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="<?php echo dirname($_SERVER['PHP_SELF']) ?>/manage-users">Manage
+                              Users</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="<?php echo dirname($_SERVER['PHP_SELF']) ?>/form-submissions">Form
+                              Submissions</a>
+                      </li>
+                  </ul>
+              </div>
+                <div>
+                    <ul class="navbar-nav loginbar">
+                        <li><a class="login-link" href="">Login</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
 	<div class="content">
 		
 	
