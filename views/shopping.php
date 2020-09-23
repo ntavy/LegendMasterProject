@@ -43,17 +43,20 @@
     <div class="row">
     <?php
     foreach ($data['listProducts'] as $item){ 
-    echo
-   '<div class="col product-item">
+    ?>
+   <div class="col product-item">
             <div class="card">
-               <img id="imageProduct" name="imageProduct" class="card-img-top product-img" src="' . dirname($_SERVER['PHP_SELF']) . '/uploads/' . $item['imagePath'] . '" alt="Card image">
+               <img id="imageProduct" name="imageProduct" class="card-img-top product-img" src="<?php echo dirname($_SERVER['PHP_SELF']) . '/uploads/' . $item['imagePath']; ?>" alt="Card image">
                 <div class="card-body">
-                    <h4 class="card-title proName"> ' . $item['proName'] . '</h4>
-                   <a href="'.dirname($_SERVER['PHP_SELF']).'/product-detail/viewproduct/' . $item['proCode'] . '" class="btn btn-primary  stretched-link btn-legend btn-legend-def">$' . $item['salePrice'] . '</a>
+                    <h4 class="card-title proName"> <?php echo $item['proName']; ?></h4>
+                   <a class="btn btn-primary  stretched-link btn-legend btn-legend-def" href="<?php echo dirname($_SERVER['PHP_SELF']).'/product-detail/viewproduct/' . $item['proCode'] ?>" >
+                       $<?php echo number_format($item['salePrice'], 2, '.', ''); ?>
+                   </a>
                 </div>
             </div>
-        </div>';
-   }        
+        </div>
+        <?php
+   }
    ?>         
     </div>
     <ul class="pagination justify-content-center">

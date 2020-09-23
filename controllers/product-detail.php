@@ -7,8 +7,8 @@ class ProductDetailController extends Controller{
     
     public function viewproduct($proCode){
         $productModel = $this->model('product');
-        $listProducts = Product::getProductByProCode($proCode);
-        return $this->view('product-detail', ['listProducts'=>$listProducts, 'activeMenu'=>"shopping"]);
+        $productItem = Product::getProductByProCode($proCode);
+        return $this->view('product-detail', ['productItem'=>$productItem, 'activeMenu'=>"shopping"]);
     }
 }
 ?>

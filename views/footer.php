@@ -1,6 +1,6 @@
 <!-- End of content -->
 </div>
-<div class="content footer d-flex justify-content-between">
+<div class="footer d-flex justify-content-between">
     <div>The legend Coffee & Tea</div>
     <div>Copyright 2020</div>
 </div>

@@ -4,7 +4,7 @@ class ShoppingController extends Controller
 {
     private $listProducts;
     private $listBrands;
-    private $itemPerPage = 2;
+    private $itemPerPage = 3;
     private $totalPages = 0;
 
     public function index()
