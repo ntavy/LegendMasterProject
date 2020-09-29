@@ -38,23 +38,36 @@
                     </li>
 
                 </ul>
-              </div>
-                <div>
-                    <ul class="navbar-nav loginbar">
-                        <li class="nav-item">
-                            <a href="<?php echo dirname($_SERVER['PHP_SELF'])?>/shopping-cart/viewCart" class="nav-link navbar-link-2 waves-effect">
+            </div>
+            <div>
+                <ul class="navbar-nav loginbar">
+                    <li class="nav-item">
+                        <a href="<?php echo dirname($_SERVER['PHP_SELF']) ?>/shopping-cart/viewCart"
+                           class="nav-link navbar-link-2 waves-effect">
 
-                                <i class="fas fa-shopping-cart pl-0"></i><span class="red cart-total"><?php echo sizeof($_SESSION["cart_items"])?></span>
-                            </a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="sign-in">Sign In</a></li>
-                        <!--			  		<li>|</li>-->
-                        <!--			  		<li><a class="login-link" href="">Sign up</a></li>-->
-                    </ul>
-                </div>
-            </nav>
-        </div>
+                            <i class="fas fa-shopping-cart pl-0"></i><span
+                                    class="red cart-total"><?php echo sizeof($_SESSION["cart_items"]) ?></span>
+                        </a>
+                    </li>
+                    <?php
+                    if (isset($data['userArray'])) {
+                        $link = 'Welcome {Name} <a class="login-link" href="' . dirname($_SERVER['PHP_SELF']) . '/log-out">Log Out</a>';
+                    } else {
+                        $link = '<a class="login-link" href="' . dirname($_SERVER['PHP_SELF']) . '/sign-in">Sign In</a>';
+                    }
+
+                    echo '<li>' . $link . '</li>';
+
+                    ?>
+                    <!--			  		<li>|</li>-->
+                    <!--			  		<li><a class="login-link" href="">Sign up</a></li>-->
+                </ul>
+
+
+            </div>
+        </nav>
     </div>
-    <div class="content">
+</div>
+<div class="content">
 		
 	
