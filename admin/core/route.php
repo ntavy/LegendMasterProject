@@ -4,12 +4,20 @@
     	protected $method = 'index';
     	protected $params = [];
 	    public function __construct(){
-	    	$req = $this->parseUrl();
+            $req = $this->parseUrl();
             $index = 0;
             if (isset($req[$index])) {
-	    		$this->controller = $req[$index];
-	    		unset($req[$index]);
-	    	}
+                $this->controller = $req[$index];
+                unset($req[$index]);
+            }
+
+	        if( !isset($_SESSION['user']) && $this->controller!='form-login'){
+                header("Location: form-login");
+	        }
+            if( isset($_SESSION['user']) && $this->controller=='form-login'){
+                header("Location: ".SITE_URL.'/admin');
+            }
+
 	    	$file = 'controllers/' . $this->controller . '.php';
 	    	//echo $file;
 			require_once $file;

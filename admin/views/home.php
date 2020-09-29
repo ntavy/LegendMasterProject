@@ -4,9 +4,7 @@
 
 ?>
 <h1>Add new product</h1>
-<!--    <iframe name="hiddenFrame" width="0" height="0" border="0" style="display: none;"></iframe>-->
-<!--    <form id="addProductForm" action="--><?php //echo dirname($_SERVER['PHP_SELF'])?><!--/home/addProduct" method="post" name="submit" target="hiddenFrame">-->
-    <form id="addProductForm" action="<?php echo dirname($_SERVER['PHP_SELF'])?>/home/addProduct" method="post" name="submit" enctype="multipart/form-data">
+    <form id="addProductForm" action="<?php echo SITE_URL?>/admin/home/addProduct" method="post" name="submit" enctype="multipart/form-data">
 		<div class="row add-product-form">
 			<div class="col">
 				<div class="form-group row">

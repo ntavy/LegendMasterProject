@@ -18,13 +18,13 @@ $total = $calcPrice * $prodQty;
 			<div class="form-group row">
 				<label for="paymentMethod" class="col-sm-3 col-form-label">Payment
 					Method: </label> <a class="col-sm-2" href="#"><img
-					src="<?php  echo dirname($_SERVER['PHP_SELF']) . '/public/images/ImagesPayment/masterCard.jpg' ; ?>" width="80"
+					src="<?php  echo SITE_URL . '/public/images/ImagesPayment/masterCard.jpg' ; ?>" width="80"
 					height="35"></a> <a class="col-sm-2" href="#"><img
-					src="<?php  echo dirname($_SERVER['PHP_SELF']) . '/public/images/ImagesPayment/PayPalCard.png' ; ?>" width="80"
+					src="<?php  echo SITE_URL . '/public/images/ImagesPayment/PayPalCard.png' ; ?>" width="80"
 					height="35"></a> <a class="col-sm-2" href="#"><img
-					src="<?php  echo dirname($_SERVER['PHP_SELF']) . '/public/images/ImagesPayment/visaCard.jpg' ; ?>" width="80"
+					src="<?php  echo SITE_URL . '/public/images/ImagesPayment/visaCard.jpg' ; ?>" width="80"
 					height="35"></a> <a class="col-sm-2" href="#"><img
-					src="<?php  echo dirname($_SERVER['PHP_SELF']) . '/public/images/ImagesPayment/visaDebitCard.jpg' ; ?>" width="80"
+					src="<?php  echo SITE_URL . '/public/images/ImagesPayment/visaDebitCard.jpg' ; ?>" width="80"
 					height="35"></a>
 			</div>
 			<div class="form-group row">

@@ -1,6 +1,6 @@
 <div class="container-fluid">
 <!--    sorting feature-->
-    <form action="<?php echo dirname($_SERVER['PHP_SELF'])?>/shopping/searchProduct" method="post" name="submit" enctype="multipart/form-data">
+    <form action="<?php echo SITE_URL?>/shopping/searchProduct" method="post" name="submit" enctype="multipart/form-data">
         <div class="row prod-sorter">
             <div class="col-sm-3">
                 Choose Beverage type:
@@ -46,10 +46,10 @@
     ?>
    <div class="col product-item">
             <div class="card">
-               <img id="imageProduct" name="imageProduct" class="card-img-top product-img" src="<?php echo dirname($_SERVER['PHP_SELF']) . '/uploads/' . $item['imagePath']; ?>" alt="Card image">
+               <img id="imageProduct" name="imageProduct" class="card-img-top product-img" src="<?php echo SITE_URL . '/uploads/' . $item['imagePath']; ?>" alt="Card image">
                 <div class="card-body">
                     <h4 class="card-title proName"> <?php echo $item['proName']; ?></h4>
-                   <a class="btn btn-primary  stretched-link btn-legend btn-legend-def" href="<?php echo dirname($_SERVER['PHP_SELF']).'/product-detail/viewproduct/' . $item['proCode'] ?>" >
+                   <a class="btn btn-primary  stretched-link btn-legend btn-legend-def" href="<?php echo SITE_URL.'/product-detail/viewproduct/' . $item['proCode'] ?>" >
                        $<?php echo number_format($item['salePrice'], 2, '.', ''); ?>
                    </a>
                 </div>
@@ -70,17 +70,17 @@
                     $next = $data['currentPage'] + 1;
                 }
         ?>
-        <li class="page-item"><a class="page-link" href="<?php echo dirname($_SERVER['PHP_SELF']).'/shopping/page/'.$previous ?>">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="<?php echo SITE_URL.'/shopping/page/'.$previous ?>">Previous</a></li>
         <?php for ($i = 1; $i<= $data['totalPages']; $i++){
                     if($data['currentPage'] == $i){
-                        echo '<li class="page-item"><a class="page-link active-page" href="'.dirname($_SERVER['PHP_SELF']).'/shopping/page/'.$i.'">'.$i.'</a></li>';
+                        echo '<li class="page-item"><a class="page-link active-page" href="'.SITE_URL.'/shopping/page/'.$i.'">'.$i.'</a></li>';
                     }else{
-                        echo '<li class="page-item"><a class="page-link" href="'.dirname($_SERVER['PHP_SELF']).'/shopping/page/'.$i.'">'.$i.'</a></li>';
+                        echo '<li class="page-item"><a class="page-link" href="'.SITE_URL.'/shopping/page/'.$i.'">'.$i.'</a></li>';
                     }
 
         }
       ?>
-        <li class="page-item"><a class="page-link" href="<?php echo dirname($_SERVER['PHP_SELF']).'/shopping/page/'.$next ?>">Next</a></li>
+        <li class="page-item"><a class="page-link" href="<?php echo SITE_URL.'/shopping/page/'.$next ?>">Next</a></li>
     </ul>
         </div>
     </div>

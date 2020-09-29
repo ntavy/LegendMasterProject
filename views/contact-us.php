@@ -6,7 +6,7 @@
     </div>
     <div class="row">
         <div class="col-sm-6">
-            <img src="<?php echo dirname($_SERVER['PHP_SELF']) ?>/public/images/legend-coffee-logo.png" alt="Image"
+            <img src="<?php echo SITE_URL ?>/public/images/legend-coffee-logo.png" alt="Image"
                  style="width:50%">
 
             <ul class="contact-text">
@@ -27,11 +27,11 @@
                 }
 
                 //send page back to contact-us
-                header("refresh:5; url=" . dirname($_SERVER['PHP_SELF']) . "/contact-us");
+                header("refresh:5; url=" . SITE_URL . "/contact-us");
             }
             ?>
 
-            <form action="<?php echo dirname($_SERVER['PHP_SELF']) ?>/contact-us/send" method="POST">
+            <form action="<?php echo SITE_URL ?>/contact-us/send" method="POST">
                 <label for="fname">First Name</label>
                 <input class="input-legend" type="text" id="fname" name="firstname" placeholder="First Name"
                        minlength="2" required>

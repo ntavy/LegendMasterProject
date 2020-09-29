@@ -6,7 +6,7 @@
 </div>
 <!-- JS, Popper.js, and jQuery -->
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="<?php echo dirname($_SERVER['PHP_SELF'])?>/public/bootstrap/js/bootstrap.min.js"></script>
-<script src="<?php echo dirname($_SERVER['PHP_SELF'])?>/public/scripts/common.js"></script>
+<script src="<?php echo SITE_URL?>/public/bootstrap/js/bootstrap.min.js"></script>
+<script src="<?php echo SITE_URL?>/public/scripts/common.js"></script>
 </body>
 </html>

@@ -18,7 +18,6 @@ class ShoppingController extends Controller
         $offset = 0;
         $this->listProducts = Product::getProductByOffset($offset, $this->itemPerPage);
         $this->listBrands = Brand::getAll();
-        $_SESSION["listBrands"] = $this->listBrands;        //store in session for reload later.
 
 
 
@@ -44,10 +43,12 @@ class ShoppingController extends Controller
         if ($sortBy != "") {
             $sortBy = $_POST["sort_by"];
         }
-        $this->model('product');
-        $this->listProducts = Product::searchProduct($proType, $proBrand, $sortBy);
+        $this->model('product'); //create instance product model before call function in Product model
+        $this->model('brand'); //create instance brand model before call function in Brand model.
 
-        getSession();
+        $this->listProducts = Product::searchProduct($proType, $proBrand, $sortBy);
+        $this->listBrands = Brand::getAll();
+
 
         return $this->view('shopping', ['activeMenu' => 'shopping', 'listProducts' => $this->listProducts, 'listBrands' => $this->listBrands]);
     }
@@ -56,12 +57,14 @@ class ShoppingController extends Controller
         $offset = ($pageNumber-1) * $this->itemPerPage;
 
         $this->model('product');
+        $this->model('brand'); //create instance brand model before call function in Brand model.
+
         $this->listProducts = Product::getProductByOffset($offset, $this->itemPerPage);
 
         $totalItems = Product::getTotalProductNumber();
         $this->totalPages = ceil($totalItems / $this->itemPerPage);
 
-        $this->getSession();
+        $this->listBrands = Brand::getAll();
 
         return $this->view('shopping', ['activeMenu' => 'shopping', 'listProducts' => $this->listProducts,
             'listBrands' => $this->listBrands, 'totalPages' => $this->totalPages, 'currentPage' => $pageNumber]);

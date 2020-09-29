@@ -3,13 +3,13 @@
 ?>
 <div class="container">
     <br><br>
-     <form id="addProductDetail" action="<?php echo dirname($_SERVER['PHP_SELF'])?>/shopping-cart/processCart/add/<?php echo $productItem['proCode']?>" method="post" name="submit" enctype="multipart/form-data">
+     <form id="addProductDetail" action="<?php echo SITE_URL?>/shopping-cart/processCart/add/<?php echo $productItem['proCode']?>" method="post" name="submit" enctype="multipart/form-data">
 		 <div class="row">
         <div class="col-sm-6 center-items">
             <img id="imageProduct" name="imageProduct" class="img-fluid"
-                 src="<?php echo dirname($_SERVER['PHP_SELF']) . '/uploads/' . $productItem['imagePath']; ?>"
+                 src="<?php echo SITE_URL . '/uploads/' . $productItem['imagePath']; ?>"
                  alt="Card image"/>
-                 <input id="imgSrc" name="imgSrc" value="<?php echo dirname($_SERVER['PHP_SELF']) . '/uploads/' . $productItem['imagePath']; ?>" hidden/>
+                 <input id="imgSrc" name="imgSrc" value="<?php echo SITE_URL . '/uploads/' . $productItem['imagePath']; ?>" hidden/>
         </div>
         <div class="col-sm-6 ">
             <h4 > <input id="proName" name="proName" class="prodDetail" type="text" value="<?php echo $productItem['proName']; ?>"></input></h4>
@@ -28,7 +28,7 @@
                 Cart
             </button>
 <!--            	<button type="submit" id="submit" name="submit" class="btn btn-primary btn-legend btn-legend-xsml">Buy It Now</button>-->
-          <!--   <a href= "<?php echo dirname($_SERVER['PHP_SELF']).'/payment/viewPayment/'.$productItem['proCode']; ?>"
+          <!--   <a href= "<?php echo SITE_URL.'/payment/viewPayment/'.$productItem['proCode']; ?>"
             class="btn btn-primary btn-legend btn-legend-xsml">Buy It Now</a>
              -->
         </div>

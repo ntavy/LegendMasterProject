@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Legend Coffee & Tea</title>
-    <link rel="stylesheet" href="<?php echo dirname($_SERVER['PHP_SELF'])?>/public/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo dirname($_SERVER['PHP_SELF'])?>/public/css/style.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo dirname($_SERVER['PHP_SELF'])?>/public/fontawesome/css/all.css">
+    <link rel="stylesheet" href="<?php echo SITE_URL ?>/public/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo SITE_URL?>/public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo SITE_URL?>/public/fontawesome/css/all.css">
 
 </head>
 <body>
@@ -27,47 +27,46 @@
 <!--                                class="sr-only">(current)</span></a>-->
 <!--                    </li>-->
                     <li class="nav-item <?php echo $data["activeMenu"]=='shopping'? 'active' : ''; ?>">
-                        <a class="nav-link" href="<?php echo dirname($_SERVER['PHP_SELF']) ?>/shopping">Shopping<span
+                        <a class="nav-link" href="<?php echo SITE_URL; ?>/shopping">Shopping<span
                                     class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item <?php echo $data["activeMenu"]=="about-us"? 'active' : '' ?>">
-                        <a class="nav-link" href="<?php echo dirname($_SERVER['PHP_SELF']) ?>/about-us">About Us</a>
+                        <a class="nav-link" href="<?php echo SITE_URL; ?>/about-us">About Us</a>
                     </li>
                     <li class="nav-item <?php echo $data["activeMenu"]=="contact-us"? 'active' : '' ?>">
-                        <a class="nav-link" href="<?php echo dirname($_SERVER['PHP_SELF']) ?>/contact-us">Contact Us</a>
+                        <a class="nav-link" href="<?php echo SITE_URL; ?>/contact-us">Contact Us</a>
                     </li>
 
                 </ul>
-            </div>
-            <div>
-                <ul class="navbar-nav loginbar">
-                    <li class="nav-item">
-                        <a href="<?php echo dirname($_SERVER['PHP_SELF']) ?>/shopping-cart/viewCart"
-                           class="nav-link navbar-link-2 waves-effect">
+              </div>
+                <div>
+                    <ul class="navbar-nav loginbar">
+                        <li class="nav-item">
+                            <a href="<?php echo SITE_URL?>/shopping-cart/viewCart" class="nav-link navbar-link-2 waves-effect">
 
-                            <i class="fas fa-shopping-cart pl-0"></i><span
-                                    class="red cart-total"><?php echo sizeof($_SESSION["cart_items"]) ?></span>
-                        </a>
-                    </li>
-                    <?php
-                    if (isset($data['userArray'])) {
-                        $link = 'Welcome {Name} <a class="login-link" href="' . dirname($_SERVER['PHP_SELF']) . '/log-out">Log Out</a>';
-                    } else {
-                        $link = '<a class="login-link" href="' . dirname($_SERVER['PHP_SELF']) . '/sign-in">Sign In</a>';
-                    }
+                                <i class="fas fa-shopping-cart pl-0"></i> <?php if(isset($_SESSION["cart_items"])) {
+                                    ?>
+                                    <span class="red cart-total"><?php echo sizeof($_SESSION["cart_items"])?></span>
+                                <?php
+                                } ?>
+                            </a>
+                        </li>
+                        <?php
+                        if (isset($data['userArray'])) {
+                            $link = 'Welcome {Name} <a class="login-link" href="' . dirname($_SERVER['PHP_SELF']) . '/log-out">Log Out</a>';
+                        } else {
+                            $link = '<a class="login-link" href="' . dirname($_SERVER['PHP_SELF']) . '/sign-in">Sign In</a>';
+                        }
 
-                    echo '<li>' . $link . '</li>';
+                        echo '<li>' . $link . '</li>';
 
-                    ?>
-                    <!--			  		<li>|</li>-->
-                    <!--			  		<li><a class="login-link" href="">Sign up</a></li>-->
-                </ul>
-
-
-            </div>
-        </nav>
+                        ?>                        <!--			  		<li>|</li>-->
+                        <!--			  		<li><a class="login-link" href="">Sign up</a></li>-->
+                    </ul>
+                </div>
+            </nav>
+        </div>
     </div>
-</div>
-<div class="content">
+    <div class="content">
 		
 	
