@@ -53,12 +53,12 @@
                         </li>
                         <?php
                         if (isset($data['userArray'])) {
-                            $link = 'Welcome {Name} <a class="login-link" href="' . dirname($_SERVER['PHP_SELF']) . '/log-out">Log Out</a>';
+                            $link = 'Welcome {Name} <a class="nav-link login-link" href="' .  SITE_URL . '/log-out">Log Out</a>';
                         } else {
-                            $link = '<a class="login-link" href="' . dirname($_SERVER['PHP_SELF']) . '/sign-in">Sign In</a>';
+                            $link = '<a class="nav-link login-link" href="' . SITE_URL . '/sign-in">Sign In</a>';
                         }
 
-                        echo '<li>' . $link . '</li>';
+                        echo '<li class="nav-item">' . $link . '</li>';
 
                         ?>                        <!--			  		<li>|</li>-->
                         <!--			  		<li><a class="login-link" href="">Sign up</a></li>-->
