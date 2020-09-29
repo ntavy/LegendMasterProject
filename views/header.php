@@ -6,6 +6,7 @@
     <title>Legend Coffee & Tea</title>
     <link rel="stylesheet" href="<?php echo dirname($_SERVER['PHP_SELF'])?>/public/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo dirname($_SERVER['PHP_SELF'])?>/public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo dirname($_SERVER['PHP_SELF'])?>/public/fontawesome/css/all.css">
 
 </head>
 <body>
@@ -25,32 +26,28 @@
 <!--                        <a class="nav-link" href="--><?php //echo dirname($_SERVER['PHP_SELF']) ?><!--">Home <span-->
 <!--                                class="sr-only">(current)</span></a>-->
 <!--                    </li>-->
-                        <li class="nav-item <?php echo $data["activeMenu"]=='shopping'? 'active' : ''; ?>">
-                            <a class="nav-link" href="<?php echo dirname($_SERVER['PHP_SELF']) ?>/shopping">Shopping<span
-                                        class="sr-only">(current)</span></a>
-                      </li>
-                      <li class="nav-item <?php echo $data["activeMenu"]=="about-us"? 'active' : '' ?>">
+                    <li class="nav-item <?php echo $data["activeMenu"]=='shopping'? 'active' : ''; ?>">
+                        <a class="nav-link" href="<?php echo dirname($_SERVER['PHP_SELF']) ?>/shopping">Shopping<span
+                                    class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item <?php echo $data["activeMenu"]=="about-us"? 'active' : '' ?>">
                         <a class="nav-link" href="<?php echo dirname($_SERVER['PHP_SELF']) ?>/about-us">About Us</a>
-                      </li>
-                      <li class="nav-item <?php echo $data["activeMenu"]=="contact-us"? 'active' : '' ?>">
+                    </li>
+                    <li class="nav-item <?php echo $data["activeMenu"]=="contact-us"? 'active' : '' ?>">
                         <a class="nav-link" href="<?php echo dirname($_SERVER['PHP_SELF']) ?>/contact-us">Contact Us</a>
-                      </li>
-			      <!-- <li class="nav-item dropdown">
-			        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			          Dropdown link
-			        </a>
-			        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-			          <a class="dropdown-item" href="#">Action</a>
-			          <a class="dropdown-item" href="#">Another action</a>
-			          <a class="dropdown-item" href="#">Something else here</a>
-			        </div>
-			      </li> -->
+                    </li>
 
                 </ul>
               </div>
                 <div>
                     <ul class="navbar-nav loginbar">
-                        <li><a class="login-link" href="sign-in">Sign In</a></li>
+                        <li class="nav-item">
+                            <a href="<?php echo dirname($_SERVER['PHP_SELF'])?>/shopping-cart/viewCart" class="nav-link navbar-link-2 waves-effect">
+
+                                <i class="fas fa-shopping-cart pl-0"></i><span class="red cart-total"><?php echo sizeof($_SESSION["cart_items"])?></span>
+                            </a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="sign-in">Sign In</a></li>
                         <!--			  		<li>|</li>-->
                         <!--			  		<li><a class="login-link" href="">Sign up</a></li>-->
                     </ul>

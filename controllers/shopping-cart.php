@@ -6,8 +6,6 @@ class ShoppingCartController extends Controller
 
         $productModel = $this->model('product');
         switch ($action) {
-
-
             case "add":
                 if (!empty($_POST["quantity"])) {
                     $cartItems = $_SESSION["cart_items"];
@@ -36,8 +34,21 @@ class ShoppingCartController extends Controller
                 unset($cartItems[$proCode]);        //remove item at proCode key
                 $_SESSION["cart_items"] = $cartItems;
                 break;
+            case "change":
+                $cartItems = $_SESSION["cart_items"];
+                $currentItem = $cartItems[$proCode];
+                $currentItem['quantity'] = $_REQUEST['quantity'];
+                $cartItems[$proCode] = $currentItem;
+                $_SESSION["cart_items"] = $cartItems;
+                break;
+            case "view":
+                break;
 
         }
+        return $this->view('shopping-cart', ['activeMenu' => 'shopping']);
+    }
+
+    public function viewCart(){
         return $this->view('shopping-cart', ['activeMenu' => 'shopping']);
     }
 }

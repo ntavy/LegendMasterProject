@@ -6,6 +6,10 @@
 	font-size: 25px;
 }
 
+.navbar-nav li:last-child{
+	float: right;
+}
+
 .navbar-brand{
 	margin-right: 50px;
 }
@@ -24,8 +28,11 @@
 	padding-right: 5px;
 	color: #1d2124;
 	text-decoration: none;
-	font-size: 20px;
 }
+
+/*.loginbar li{*/
+/*	font-size: 20px;*/
+/*}*/
 
 .content{
 	padding: 20px 20px;
@@ -242,7 +249,17 @@
 	width: 600px;
 }
 
+.red{
+	color: red;
+}
 
+.cart-total{
+	padding-right: .6em;
+	padding-left: .6em;
+	border-radius: 10rem;
+	font-size: 12px;
+	border: 1px solid red;
+}
 
 /****** Extra small devices   ********/
 @media only screen and (max-width: 600px) {
