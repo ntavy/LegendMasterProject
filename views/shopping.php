@@ -6,8 +6,8 @@
                 Choose Beverage type:
                 <select name="beverage" id="" class="custom-select">
                     <option value="">All</option>
-                    <option value="coffee">Coffee</option>
-                    <option value="tea">Tea</option>
+                    <option value="coffee" <?php if(isset($_SESSION['searchByBeverage']) && $_SESSION['searchByBeverage'] == 'coffee') echo 'selected'; ?>>Coffee</option>
+                    <option value="tea" <?php if(isset($_SESSION['searchByBeverage']) && $_SESSION['searchByBeverage'] == 'tea') echo 'selected'; ?>>Tea</option>
                 </select>
             </div>
             <div class="col-sm-3">
@@ -16,7 +16,11 @@
                     <option value="">All</option>
                     <?php
                         foreach ($data['listBrands'] as $item){
-                            echo '<option value="'.$item['brandID'].'">'.$item['name'].'</option>';
+                            ?>
+                            <option value="<?echo $item['brandID'];  ?>" <?php if(isset($_SESSION['searchByBrand']) && $_SESSION['searchByBrand'] == $item['brandID']) echo 'selected'; ?> >
+                                <?php echo $item['name']; ?>
+                            </option>
+                    <?php
                         }
                     ?>
                 </select>
@@ -24,12 +28,12 @@
             <div class="col-sm-3">
                 Sort By:
                 <select name="sort_by" id="" class="custom-select">
-                    <option value="name">Name</option>
-                    <option value="price_low">Price, low to high</option>
-                    <option value="price_high">Price, high to low</option>
-                    <option value="best">Best seller</option>
-                    <option value="new">Newest</option>
-                    <option value="old">Oldest</option>
+                    <option value="name" <?php if(isset($_SESSION['sortBy']) && $_SESSION['sortBy'] == 'name') echo 'selected'; ?> >Name</option>
+                    <option value="price_low" <?php if(isset($_SESSION['sortBy']) && $_SESSION['sortBy'] == 'price_low') echo 'selected'; ?> >Price, low to high</option>
+                    <option value="price_high" <?php if(isset($_SESSION['sortBy']) && $_SESSION['sortBy'] == 'price_high') echo 'selected'; ?> >Price, high to low</option>
+                    <option value="best" <?php if(isset($_SESSION['sortBy']) && $_SESSION['sortBy'] == 'best') echo 'selected'; ?> >Best seller</option>
+                    <option value="new" <?php if(isset($_SESSION['sortBy']) && $_SESSION['sortBy'] == 'new') echo 'selected'; ?> >Newest</option>
+                    <option value="old" <?php if(isset($_SESSION['sortBy']) && $_SESSION['sortBy'] == 'old') echo 'selected'; ?> >Oldest</option>
                 </select>
             </div>
             <div class="col-sm-3">

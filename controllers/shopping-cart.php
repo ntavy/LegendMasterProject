@@ -35,9 +35,13 @@ class ShoppingCartController extends Controller
                 $_SESSION["cart_items"] = $cartItems;
                 break;
             case "change":
+                $productItem = Product::getProductByProCode($proCode);
+                $remainQuantity = $productItem["remainQuantity"];
                 $cartItems = $_SESSION["cart_items"];
                 $currentItem = $cartItems[$proCode];
-                $currentItem['quantity'] = $_REQUEST['quantity'];
+                if($_REQUEST['quantity'] <= $remainQuantity){
+                    $currentItem['quantity'] = $_REQUEST['quantity'];
+                }
                 $cartItems[$proCode] = $currentItem;
                 $_SESSION["cart_items"] = $cartItems;
                 break;
