@@ -27,7 +27,7 @@
         }
         ?>
         <div class="card-item-total">Subtotal: <span class="">$<?php echo number_format($subTotal, 2, '.', '');?></span> </div>
-        <a class="btn btn-primary btn-legend" id="checkoutBtn" href="<?php echo SITE_URL . '/shipping-address' ?>" >CHECKOUT</a>
+        <a class="btn btn-primary btn-legend" id="checkoutBtn" href="<?php echo SITE_URL . '/payment' ?>" >CHECKOUT</a>
         <?php
     }else{
         ?>

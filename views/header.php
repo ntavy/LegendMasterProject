@@ -41,14 +41,20 @@
               </div>
                 <div>
                     <ul class="navbar-nav loginbar">
+                  <?php
+                        $totalQty = 0;
+                     if(!empty($_SESSION["cart_items"])){
+                        foreach ($_SESSION["cart_items"] as $itemKey => $itemVal) {
+                          $totalQty  += $itemVal["quantity"];
+                        }
+                        }
+                        ?>
                         <li class="nav-item">
                             <a href="<?php echo SITE_URL?>/shopping-cart/viewCart" class="nav-link navbar-link-2 waves-effect">
 
-                                <i class="fas fa-shopping-cart pl-0"></i> <?php if(isset($_SESSION["cart_items"])) {
-                                    ?>
-                                    <span class="red cart-total"><?php echo sizeof($_SESSION["cart_items"])?></span>
-                                <?php
-                                } ?>
+                                <i class="fas fa-shopping-cart pl-0"></i> 
+                                    <span class="red cart-total"><?php echo  $totalQty ?></span>
+                               
                             </a>
                         </li>
                         <?php
