@@ -15,7 +15,7 @@
                 <input class="input-legend" type="text" id="firstName" name="firstName" placeholder="First Name">
 
                 <label for="lastName">Last Name</label><span style="color: red !important; display: inline; float: none;">*</span>
-                <input class="input-legend" type="text" id="lastName" name="lastname" placeholder="Last Name">
+                <input class="input-legend" type="text" id="lastName" name="lastName" placeholder="Last Name">
 
                 <label for="email">Email</label><span style="color: red !important; display: inline; float: none;">*</span>
                 <input class="input-legend" type="text" id="email" name="email" placeholder="Email ID">
