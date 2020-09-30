@@ -56,7 +56,7 @@ class Product {
                 $prepareSql = $prepareSql." AND typeCode = '".$proType."'";
             }
             if($proBrand != 0){
-                $prepareSql = $prepareSql." AND brandID = ".$proBrand."";
+                $prepareSql = $prepareSql." AND brandID = ".$proBrand;
             }
         }
         if($sortBy != ""){

@@ -50,7 +50,8 @@ class ShoppingController extends Controller
         $this->listBrands = Brand::getAll();
 
 
-        return $this->view('shopping', ['activeMenu' => 'shopping', 'listProducts' => $this->listProducts, 'listBrands' => $this->listBrands]);
+        return $this->view('shopping', ['activeMenu' => 'shopping', 'listProducts' => $this->listProducts,
+                        'listBrands' => $this->listBrands ,'totalPages' => $this->totalPages, 'currentPage' => 1]);
     }
 
     public function page($pageNumber){
@@ -70,10 +71,6 @@ class ShoppingController extends Controller
             'listBrands' => $this->listBrands, 'totalPages' => $this->totalPages, 'currentPage' => $pageNumber]);
     }
 
-    public function getSession(){
-        $this->listBrands = $_SESSION["listBrands"];
-
-    }
 
 
 }

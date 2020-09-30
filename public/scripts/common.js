@@ -10,7 +10,7 @@ function changeQuantity(val, rootUrl){
         type:'post',
         data:{quantity: val},
         success:function(data){
-            console.log(data);
+            window.location.reload();
         }
     });
 }
