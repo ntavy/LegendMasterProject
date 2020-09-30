@@ -10,24 +10,35 @@
             <img src="public/images/Bicycle.jpg" alt="Image" style="width:80%">
         </div>
         <div class="col-sm-6">
-            <form action="" method="">
-                <label for="fname">First Name</label><span style="color: red !important; display: inline; float: none;">*</span>
-                <input class="input-legend" type="text" id="fname" name="firstname" placeholder="First Name">
+            <form id="addShippingAddressForm" action="<?php echo dirname($_SERVER['PHP_SELF'])?>/shipping-address/addShipping" method="post" name="submit" enctype="multipart/form-data">
+                <label for="firstName">First Name</label><span style="color: red !important; display: inline; float: none;">*</span>
+                <input class="input-legend" type="text" id="firstName" name="firstName" placeholder="First Name">
 
-                <label for="lname">Last Name</label><span style="color: red !important; display: inline; float: none;">*</span>
-                <input class="input-legend" type="text" id="lname" name="lastname" placeholder="Last Name">
+                <label for="lastName">Last Name</label><span style="color: red !important; display: inline; float: none;">*</span>
+                <input class="input-legend" type="text" id="lastName" name="lastname" placeholder="Last Name">
 
                 <label for="email">Email</label><span style="color: red !important; display: inline; float: none;">*</span>
-                <input class="input-legend" type="text" id="email" name="emailId" placeholder="Email ID">
+                <input class="input-legend" type="text" id="email" name="email" placeholder="Email ID">
+
+				<label for="phoneNumber">Phone No.</label><span style="color: red !important; display: inline; float: none;">*</span>
+                <input class="input-legend" type="text" id="phoneNumber" name="phoneNumber" placeholder="0422367320">
 
                 <label for="company">Company</label>
                 <input class="input-legend" type="text" id="company" name="company" placeholder="Company Name">
+                
+                  <label for="street">Street</label>
+                <input class="input-legend" type="text" id="street" name="street" placeholder="John St">
+                  <label for="suburb">Suburb</label>
+                <input class="input-legend" type="text" id="suburb" name="suburb" placeholder="Underdale">
+                  <label for="postCode">Post Code</label>
+                <input class="input-legend" type="text" id="postCode" name="postCode" placeholder="5032">
+                  <label for="city">City</label>
+                <input class="input-legend" type="text" id="city" name="city" placeholder="Adelaide">
 
-                <label for="subject">Address</label><span style="color: red !important; display: inline; float: none;">*</span>
-                <input class="input-legend" type="text" id="Address" name="Address" placeholder="Address">
+                <label for="state">State</label><span style="color: red !important; display: inline; float: none;">*</span>
+                <input class="input-legend" type="text" id="state" name="state" placeholder="SA">
 
-                <label for="email">Zip-Code</label><span style="color: red !important; display: inline; float: none;">*</span>
-                <input class="input-legend" type="text" id="Zip" name="zipCode" placeholder="Zip-Code">
+             
                 
                 <label for="country">Country</label><span style="color: red !important; display: inline; float: none;">*</span>      
                 <select id="country" name="country" class="form-control">

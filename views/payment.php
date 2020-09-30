@@ -1,12 +1,12 @@
 <?php
-$proName = $_POST['proName'];
+/*$proName = $_POST['proName'];
 $salePrice = $_POST['salePrice'];
 $img = $_POST['imgSrc'];
 $size = $_POST['sizePerPack'];
 $prodQty = $_POST['prodQty'];
 $calcPrice = ltrim($salePrice, '$');
 $total = $calcPrice * $prodQty;
-
+*/
 ?>
 <h1>Payment</h1>
 <iframe name="hiddenFrame" width="0" height="0" border="0"
@@ -78,32 +78,49 @@ $total = $calcPrice * $prodQty;
 			<div class="form-group row">
 				<label for="billingAddress" class="col-sm-3 col-form-label">Billing
 					Address: </label> <input type="text" class="form-control col-sm-6"
-					name="billingAddress" id="billingAddress">
-				<button type="button" class="btnAddBillingAddress btn btn-primary btn-legend">Add
-					Billing Address</button>
+					name="billingAddress" id="billingAddress"> 
+					<a class="btn btn-primary btn-legend btnAddBillingAddress" href="<?php echo dirname($_SERVER['PHP_SELF']) . '/shipping-address' ?>">Billing Address
+					</a>
 			</div>
 			<div class="form-group row">
-				<button type="button" class="btnPay btn btn-primary btn-legend btn-legend-xsml">Pay</button>
+				<button type="button" class="btnPay btn btn-primary btn-legend btn-legend-sml">Pay</button>
 			</div>
 		</div>
 		<div class="col-md-4">
 			<!-- this field is to show the item and its details -->
-
-			<div class="card">
-				<div class="col-sm-8">
-					 <img id="imageProduct" name="imageProduct" class="img-fluid"
-                 src="<?php echo $img; ?>"
-                 alt="Card image"/>
+				
+	<div class="card">
+    <?php
+    $subTotal = 0;
+    if(!empty($_SESSION["cart_items"])){
+        foreach ($_SESSION["cart_items"] as $itemKey => $itemVal) {
+            $subTotal += $itemVal["quantity"] * $itemVal["salePrice"];
+            ?>
+            <div>
+                <div class="card-item-image">
+                    <a><img src="<?php echo dirname($_SERVER['PHP_SELF']) . '/uploads/' . $itemVal['imagePath'] ?>"  alt="<?php echo $itemVal['proName']; ?>">
+                    </a></div>
+                <div class="card-item-body">
+                    <h6><?php echo $itemVal['proName']; ?></h6>
+                    <b>Size:</b> <?php echo $itemVal['sizePerPack'] ?>
+                    <b>Price:</b> <?php echo number_format($itemVal['salePrice'], 2, '.','') ?>
+                    <b>Quantity:</b> <?php echo $itemVal['quantity'] ?> 
+                </div>
+            </div>
+            <?php
+        }
+        ?>
+        <hr/>
+        <div class="card-item-total">Subtotal: $<?php echo $subTotal;?> </div>
+        <?php
+    }else{
+    }
+        ?>
+</div>
+				
+				
 				</div>
-				<div class="card-body">
-					 <label for="proName" class="form-group row border-0 ">Product Name: <?php echo $_POST['proName']; ?> </label>
-					<label for="salePrice" class="form-group row border-0 ">Price: <?php echo $salePrice; ?> </label>
-					<label for="sizePerPack" class="form-group row border-0">Size Per Pack: <?php echo $size; ?></label>
-					<label for="Qty" class="form-group row border-0 ">Qty: <?php echo $_POST['prodQty']; ?> </label>
-					<label for="total" class="form-group row border-0">Total Amount: $<?php echo $total; ?></label>
-				</div>
-			</div>
-		</div>
+		
 </form>
 
 
