@@ -40,16 +40,16 @@ class ShoppingController extends Controller
         $offset = 0;
 
 
-        if ($_POST["beverage"] != "") {
+        if ( isset($_POST["beverage"])) {
             $proType = $_POST["beverage"];
             $_SESSION['searchByBeverage'] = $proType;
         }
-        if ($_POST["brand"] != "") {
+        if ( isset($_POST["brand"]) ){
             $proBrand = $_POST["brand"];
             $_SESSION['searchByBrand'] = $proBrand;
 
         }
-        if ($sortBy != "") {
+        if (isset($_POST["sort_by"])) {
             $sortBy = $_POST["sort_by"];
             $_SESSION['sortBy'] = $sortBy;
 
