@@ -19,7 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `legend_db`
 --
-
+CREATE DATABASE IF NOT EXISTS `legend_db` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `legend_db`;
 -- --------------------------------------------------------
 
 --

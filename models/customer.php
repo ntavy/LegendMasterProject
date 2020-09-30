@@ -79,14 +79,38 @@ class Customer
         $db = Database::getInstance();
 
         try {
-            $req = $db->query("SELECT * FROM customeraccount C 
-                    UNION personalcustomer P on C.cusAcc = P.perCus
+            $req = $db->query("SELECT C.cusAccID, C.username, C.isConfirm, P.* FROM customeraccount C 
+                    LEFT JOIN personalcustomer P on C.cusAccID = P.perCusID
                     WHERE C.cusAccID = " . $id);
             foreach ($req->fetchAll() as $rc) {
                 $list = $rc;
             }
 
             return $list;
+        } catch (PDOException $e) {
+            return "Error. " . $e->getMessage();
+        }
+    }
+
+    public static function verifyUser($username, $password)
+    {
+        $list = [];
+        $db = Database::getInstance();
+
+        try {
+            $req = $db->query("SELECT * FROM customeraccount
+                    WHERE username = '" . $username . "' and password = '" . $password . "' and isConfirm = '1'");
+
+            if ($req->rowCount() == 1) {
+                foreach ($req->fetchAll() as $rc) {
+                    $list = $rc;
+                }
+                return $list['cusAccID'];
+            } else {
+                return "Invalid username or password";
+            }
+
+
         } catch (PDOException $e) {
             return "Error. " . $e->getMessage();
         }

@@ -48,12 +48,45 @@ class SignInController extends Controller
         }
 
         if ($login == true) {
-            header("refresh:0;url=" . dirname($_SERVER['PHP_SELF']) . "/");
+
+            session_start();
+            $_SESSION['userData'] = $this->getUserData($_POST['userID']);
+            header("refresh:0;url=" . dirname($_SERVER['PHP_SELF']) . "/shopping");
+
         } else {
+
             $this->view('verify-email', [
                 'userID' => $_POST['userID'],
                 'verMessage' => $msg
             ]);
+
         }
+    }
+
+    public function verifyLogin()
+    {
+        $this->model('customer');
+
+        $verf = Customer::verifyUser($_POST['username'], $_POST['password']);
+
+        if (is_numeric($verf)) {
+            //valid user
+            session_start();
+            $_SESSION['userData'] = $this->getUserData($verf);
+            header("refresh:0;url=" . dirname($_SERVER['PHP_SELF']) . "/shopping");
+        } else {
+            //invalid user
+            $this->view('sign-in', [
+                'verResult' => $verf
+            ]);
+        }
+
+    }
+
+    public function getUserData($id)
+    {
+        $this->model('customer');
+
+        return Customer::getUserByID($id);
     }
 }

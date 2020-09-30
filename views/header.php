@@ -48,25 +48,26 @@
                           $totalQty  += $itemVal["quantity"];
                         }
                         }
-                        ?>
+                  ?>
                         <li class="nav-item">
-                            <a href="<?php echo SITE_URL?>/shopping-cart/viewCart" class="nav-link navbar-link-2 waves-effect">
+                            <a href="<?php echo SITE_URL ?>/shopping-cart/viewCart"
+                               class="nav-link navbar-link-2 waves-effect">
 
-                                <i class="fas fa-shopping-cart pl-0"></i> 
-                                    <span class="red cart-total"><?php echo  $totalQty ?></span>
-                               
+                                <i class="fas fa-shopping-cart pl-0"></i>
+                                <span class="red cart-total"><?php echo $totalQty ?></span>
+
                             </a>
                         </li>
                         <?php
-                        if (isset($data['userArray'])) {
-                            $link = 'Welcome {Name} <a class="nav-link login-link" href="' .  SITE_URL . '/log-out">Log Out</a>';
+                        if (isset($_SESSION['userData']['cusAccID'])) {
+                            $link = 'Welcome, ' . $_SESSION['userData']['firstName'] . ' <a class="nav-link login-link" href="' . SITE_URL . '/log-out">Log Out</a>';
                         } else {
                             $link = '<a class="nav-link login-link" href="' . SITE_URL . '/sign-in">Sign In</a>';
                         }
 
                         echo '<li class="nav-item">' . $link . '</li>';
 
-                        ?>                        <!--			  		<li>|</li>-->
+                        ?> <!--			  		<li>|</li>-->
                         <!--			  		<li><a class="login-link" href="">Sign up</a></li>-->
                     </ul>
                 </div>
