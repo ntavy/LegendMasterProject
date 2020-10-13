@@ -22,8 +22,8 @@ class ManageProductsAdminController extends Controller{
     public function edit($proCode){
         $listBrands = Brand::getAll();
         //print_r($listBrands);
-        echo 'procode'.$proCode;
-        return $this->view('home', ['listBrands'=>$listBrands, 'listSuppliers'=>$this->listSuppliers, 'isUpdate'=>true, 'proCode'=>$proCode]);
+        $editItem = Product::getProductByProCode($proCode);
+        return $this->view('home', ['listBrands'=>$listBrands, 'listSuppliers'=>$this->listSuppliers, 'isUpdate'=>true, 'editItem'=>$editItem]);
     }
 }
 ?>

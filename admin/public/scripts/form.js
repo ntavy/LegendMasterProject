@@ -29,8 +29,6 @@ $('#addProductForm').submit(function(e){
             $('#proQuantity').val("");
             $('#proPhoto').val("");
             $('#proSize').val("");
-
-
         }
     });
 });

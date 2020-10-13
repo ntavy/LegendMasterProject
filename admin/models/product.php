@@ -50,4 +50,41 @@ class Product {
         }
 
     }
+
+    public static function getProductByProCode($proCode){
+        $list = [];
+        $db = Database::getInstance();
+        $req = $db->query("SELECT B.name, P.* FROM product P
+                                    left join brand B on P.brandID = B.brandID
+                                    WHERE P.proCode =" . $proCode);
+        $row = $req->fetch();       //fetch one row
+        return $row;
+    }
+
+    public static function updateProduct($proCode, $proName, $proDescription, $brandID, $supplierCode, $importedQuantity, $remainQuantity, $typeCode, $purchasedPrice, $salePrice, $sizePerPack, $imagePath, $updatedDate){
+        $db = Database::getInstance();
+        try {
+
+            $sql = "UPDATE product SET  proName = ".$proName.", 
+                       proDescription = '".$proDescription."',
+                        brandID = ".$brandID.",
+                        supplierCode = ".$supplierCode.",
+                        importedQuantity = ".$importedQuantity.",
+                        remainQuantity = ".$remainQuantity.",
+                        typeCode = '".$typeCode."',
+                        purchasedPrice = ".$purchasedPrice.",
+                        salePrice = ".$salePrice.",
+                        sizePerPack = '".$sizePerPack."',
+                        imagePath = '".$imagePath."',
+                        updatedDate = '".$updatedDate."'
+                    WHERE product.proCode = ".$proCode;
+//            echo $sql;
+            // use exec() because no results are returned
+            $db->exec($sql);
+            echo "the record updated successfully";
+        } catch(PDOException $e) {
+            echo $sql . "<br>" . $e->getMessage();
+        }
+
+    }
 }

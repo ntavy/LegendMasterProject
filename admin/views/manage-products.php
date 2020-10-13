@@ -23,24 +23,25 @@
     <?php
         //print_r($data['listBrands']);
     foreach ($data['listProducts'] as $item){
-//            echo '<option value='.$item[brandID].'>'.$item[name].'</option>';
-        echo '<tr>
-                    <td>'.$item['proCode'].'</td>
-                    <td>'.$item['proName'].'</td>
-                    <td>'.substr($item['proDescription'], 0, 20).'</td>
-                    <td>'.$item['brandID'].'</td>
-                    <td>'.$item['supplierCode'].'</td>
-                    <td>'.$item['importedQuantity'].'</td>
-                    <td>'.$item['remainQuantity'].'</td>
-                    <td>'.$item['typeCode'].'</td>
-                    <td>'.$item['purchasedPrice'].'</td>
-                    <td>'.$item['salePrice'].'</td>
-                    <td>'.$item['sizePerPack'].'</td>
-                    <td>'.$item['imagePath'].'</td>
-                    <td>'.$item['addedDate'].'</td>
-                    <td>'.$item['updatedDate'].'</td>
-                    <td><a href="manage-products/edit/'.$item['proCode'].'">Edit</a>
-                   </tr>';
+        ?>
+        <tr>
+                    <td><?php echo $item['proCode']; ?></td>
+                    <td><?php echo $item['proName']; ?></td>
+                    <td><?php echo substr($item['proDescription'], 0, 20); ?></td>
+                    <td><?php echo $item['brandID']; ?></td>
+                    <td><?php echo $item['supplierCode']; ?></td>
+                    <td><?php echo $item['importedQuantity']; ?></td>
+                    <td><?php echo $item['remainQuantity']; ?></td>
+                    <td><?php echo $item['typeCode']; ?></td>
+                    <td><?php echo $item['purchasedPrice']; ?></td>
+                    <td><?php echo $item['salePrice']; ?></td>
+                    <td><?php echo $item['sizePerPack']; ?></td>
+                    <td><?php echo $item['imagePath']; ?></td>
+                    <td><?php echo $item['addedDate']; ?></td>
+                    <td><?php echo $item['updatedDate']; ?></td>
+                    <td><a href="<?php echo SITE_URL?>/admin/manage-products/edit/<?php echo $item['proCode']?>">Edit</a>
+                   </tr>
+    <?php
 
     } ?>
     </tbody>

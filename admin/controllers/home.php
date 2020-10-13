@@ -21,7 +21,7 @@ class HomeAdminController extends Controller{
 //        return $listName;
 //    }
 
-    public function addProduct(){
+    public function saveProduct(){
         $target_dir = UPLOAD_DIR;
 
         $uploadOk = 1;
@@ -73,6 +73,7 @@ class HomeAdminController extends Controller{
             }
         }
 
+
         $proType =  $_POST["proType"];
         $proName = $_POST["proName"];
         $proDesc = $_POST["proDesc"];
@@ -81,6 +82,10 @@ class HomeAdminController extends Controller{
         $proSalePrice = 0;
         $proPurchasedPrice = 0;
         $proQuantity = 0;
+        $proCode = 0;
+        if(isset($_POST["proCode"])){
+            $proCode = $_POST["proCode"];
+        }
         if(isset($_POST["proPurchasedPrice"])){
             $proPurchasedPrice = $_POST["proPurchasedPrice"];
         }
@@ -94,9 +99,17 @@ class HomeAdminController extends Controller{
         $proSize = $_POST["proSize"];
 
         $this->model('product');
-        Product::insertProduct($proName, $proDesc, $proBrand, $proSupplier, $proQuantity, $proQuantity,$proType, $proPurchasedPrice, $proSalePrice,
-            $proSize, $proPhoto, date("Y/m/d H:i:s"),date("Y/m/d H:i:s"));
+        if($proCode==0){
+            Product::insertProduct($proName, $proDesc, $proBrand, $proSupplier, $proQuantity, $proQuantity,$proType, $proPurchasedPrice, $proSalePrice,
+                $proSize, $proPhoto, date("Y/m/d H:i:s"),date("Y/m/d H:i:s"));
+        }else{
+            Product::updateProduct($proCode, $proName, $proDesc, $proBrand, $proSupplier, $proQuantity, $proQuantity,$proType, $proPurchasedPrice, $proSalePrice,
+                $proSize, $proPhoto, date("Y/m/d H:i:s"));
+        }
+
 
     }
+
+
 }
 ?>

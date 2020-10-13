@@ -77,11 +77,16 @@
 	border: 1px solid #5a4a42;
 }
 
-.btn-legend:hover {
+.btn-legend:not(:disabled):hover{
 	background-color: #efac20;
 	color: #1d2124;
 	border: 1px solid #efac20;
 }
+
+.btn-legend:disabled {
+	color: #1d2124;
+}
+
 
 .btn-legend-xsml {
 	width: 30%;
@@ -259,6 +264,41 @@
 	border-radius: 10rem;
 	font-size: 12px;
 	border: 1px solid red;
+}
+
+.textwelcome{
+	padding: 7px 0;
+}
+
+.myaccount{
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+a.mylink{
+	border-bottom: 1px solid #ced4da;
+	padding: 10px 0;
+	color: black;
+	text-decoration: none;
+	display: flow-root;
+}
+
+.myaccount a:hover, .myaccount a:active{
+	text-decoration: none;
+}
+
+
+.linkarrow{
+	font-size: 20px;
+	float: right
+}
+
+.noHover{
+	pointer-events: none;
+}
+
+.paragraph p{
+	text-align: justify;
 }
 
 /****** Extra small devices   ********/

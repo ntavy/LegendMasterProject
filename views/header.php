@@ -13,7 +13,7 @@
 <div class="header">
     <div class="menu">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#"><img
+            <a class="navbar-brand" href="<?php echo SITE_URL?>"><img
                     src="<?php echo SITE_URL . '/public/images/legend-coffee-logo.png'; ?>"
                     class="img-fluid navbar-img"/></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
@@ -36,7 +36,6 @@
                     <li class="nav-item <?php echo $data["activeMenu"]=="contact-us"? 'active' : '' ?>">
                         <a class="nav-link" href="<?php echo SITE_URL; ?>/contact-us">Contact Us</a>
                     </li>
-
                 </ul>
               </div>
                 <div>
@@ -60,15 +59,24 @@
                         </li>
                         <?php
                         if (isset($_SESSION['userData']['cusAccID'])) {
-                            $link = 'Welcome, ' . $_SESSION['userData']['firstName'] . ' <a class="nav-link login-link" href="' . SITE_URL . '/log-out">Log Out</a>';
-                        } else {
-                            $link = '<a class="nav-link login-link" href="' . SITE_URL . '/sign-in">Sign In</a>';
-                        }
+                            $link = 'Welcome, ' . $_SESSION['userData']['firstName'];
+                            ?>
+                            <li class="nav-item textwelcome"><?php echo $link; ?></li>
+                            <li class="nav-item">
+                                <a class="nav-link login-link" href="<?php echo SITE_URL ?>/my-account"><i
+                                        class="fas fa-user" title="My Account"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link login-link" href="<?php echo SITE_URL ?>/log-out"><i
+                                        class="fas fa-sign-out-alt" title="Sign Out"></i></a>
+                            </li>
+                            <?php
+                        } else{
 
-                        echo '<li class="nav-item">' . $link . '</li>';
 
-                        ?> <!--			  		<li>|</li>-->
-                        <!--			  		<li><a class="login-link" href="">Sign up</a></li>-->
+                        ?>
+                        <li class="nav-item"><a class="nav-link login-link" href="<?php echo SITE_URL ?>/sign-in">Sign In</a></li>
+                        <?php } ?>
                     </ul>
                 </div>
             </nav>
